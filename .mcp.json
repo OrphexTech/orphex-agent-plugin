@@ -1,0 +1,10 @@
+{
+  "orphex": {
+    "type": "http",
+    "url": "https://api.orphex.co/api/interaction-gateway/v1/mcp",
+    "oauth": {
+      "clientId": "z350XlBKlenZ2uPDSPRECaM0EpY7cbkU",
+      "callbackPort": 33418
+    }
+  }
+}
