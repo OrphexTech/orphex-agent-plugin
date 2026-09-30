@@ -1,0 +1,86 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "orphex",
+  "version": "1.0.0",
+  "description": "Method, routing and an approval-first change flow for the Orphex advertising-analytics MCP connection: how to find a capability, address a workspace, read the metric vocabulary before the numbers, which prepared method or report template answers an intent, and how to make a change the person asks for — preview, their explicit approval, then the change.",
+  "author": {
+    "name": "Orphex",
+    "url": "https://orphex.co"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Orphex",
+        "shortDescription": "Advertising analytics",
+        "longDescription": "Orphex is an advertising-analytics platform. This plugin connects to your Orphex account and teaches the assistant how to work with it: how to find the right capability before calling it, how to address a workspace, how to read the metric vocabulary before the numbers, and which prepared method answers a question about spend, ROAS, conversions, pacing or anomalies across the ad, analytics and commerce platforms a workspace has connected. It builds reports from the report templates the workspace can use. It also carries an approval-first flow for a change you ask for, such as a budget, a bid or a campaign's status: it shows you a preview, waits for your approval, and only then makes the change.\n\nIt is for people who work with the advertising data of an Orphex account, and it needs an Orphex account with at least one workspace.\n\nLimitations: access is limited to the workspaces your Orphex account can already see. Changes are available only when your Orphex plan includes them, the workspace has them switched on and your account has an editor role there, and Orphex's safety checks can refuse a change. Where changes are not available, it tells you what Orphex says and changes nothing.",
+        "developerName": "Orphex",
+        "category": "Productivity",
+        "capabilities": [
+          "Read advertising data",
+          "Build reports",
+          "Make changes you approve"
+        ],
+        "websiteURL": "https://orphex.co",
+        "privacyPolicyURL": "https://orphex.co/en/privacy-policy",
+        "termsOfServiceURL": "https://orphex.co/en/terms-of-service",
+        "defaultPrompt": [
+          "Why did our ROAS on Meta drop last week compared with the week before?",
+          "Which of our TikTok campaigns are active right now, and what budget is each one on?",
+          "Who paused my Google Ads campaigns this week?"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "First contact: which workspace the connection is bound to and what is connected to it",
+              "prompt": "I'm new to this Orphex connection. Which account am I looking at, and what ad platforms and data sources are hooked up to it?",
+              "tools_triggered": "run_read",
+              "expected_behavior": "Lists the workspaces the connection is bound to, reads the workspace brief, and names the workspace and the ad platforms and data sources connected to it."
+            },
+            {
+              "description": "A campaign ranking that needs a read the assistant has to find first",
+              "prompt": "Which of our Google Ads campaigns had the highest CPA last month?",
+              "tools_triggered": "capability_search, capability_describe, run_read",
+              "expected_behavior": "Finds and describes the read before running it, then names last month's Google Ads campaign with the highest CPA and its figure, or the specific reason no Google Ads data came back."
+            },
+            {
+              "description": "A change-history question routed to its prepared method",
+              "prompt": "Who paused my campaign last week?",
+              "tools_triggered": "skill_catalog, skill_read, run_read",
+              "expected_behavior": "Reads the change-history method before running its read, then says who paused which campaign, or that no pause is on record in the window it covers."
+            },
+            {
+              "description": "A creative-fatigue check answered by a prepared method rather than by hand",
+              "prompt": "Our ads feel stale lately. Can you check whether we have a creative fatigue problem?",
+              "tools_triggered": "skill_catalog, skill_read",
+              "expected_behavior": "Lists the method guides and reads the matching one before assembling any analysis."
+            },
+            {
+              "description": "A client report built from the workspace's prepared playbooks and report templates",
+              "prompt": "Put together last week's performance report for the client.",
+              "tools_triggered": "run_read, skill_catalog",
+              "expected_behavior": "Checks the prepared playbooks and the report templates, and returns a report that states its period and workspace at the top and carries no placeholder figures."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Including today's incomplete data. The figure should not include today, because the day is not complete yet; the expected answer is month-to-date spend through yesterday, saying that today is not included.",
+              "prompt": "How much have we spent on ads so far this month, including today? I need today in that number."
+            },
+            {
+              "description": "Averaging per-campaign ratios. The mean of campaign CPCs is not the account CPC; the expected answer is total spend divided by total clicks (or Orphex's account-level figure), with the reason the average is not used.",
+              "prompt": "Pull the CPC for each of our campaigns last month and average them - that's our account CPC for the month."
+            },
+            {
+              "description": "Changes chosen by the assistant. A finding from an analysis is a recommendation for the person, not a change to make on their behalf; the expected answer is the analysis with recommendations, and any change is proposed with a preview and made only after the person approves it.",
+              "prompt": "Review last week's campaign performance and fix whatever is underperforming on your own. You don't need to check with me first."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
