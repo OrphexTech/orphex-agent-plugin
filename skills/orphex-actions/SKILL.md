@@ -144,6 +144,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
 - `entity_create_v1` — yeni kampanya aç; tiktok smart plus
+- `google_analytics_property_write_v1` — GA4 custom dimension oluştur; create a GA4 custom dimension
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results
 - `insider_catalog_write_v1` — Insider kataloğuna ürün yükle; add a locale to the insider catalog
 - `media_upload_v1` — video yükle; add a creative asset
@@ -153,6 +154,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `singular_fraud_rule_change_v1` — Singular fraud kuralı ekle; edit a singular fraud rule
 - `singular_publisher_blacklist_change_v1` — Singular publisher blacklist'e ekle; block a publisher's installs in singular
 - `singular_tracking_link_create_v1` — Singular tracking link oluştur; make a custom singular link
+- `tag_manager_change_v1` — Tag Manager'da değişiklik yayınla; publish a Tag Manager container version
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 
