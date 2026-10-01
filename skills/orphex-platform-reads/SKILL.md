@@ -94,7 +94,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_ikas_v1` — ikas; ikas product catalogue
 - `platform_reads_linkedin_activity_v1` — linkedin spend; linkedin ad level report
 - `platform_reads_linkedin_v1` — linkedin; linkedin reklamı neden reddedildi
-- `platform_reads_merchant_center_structure_v1` — merchant center alt hesapları; merchant center product issues
+- `platform_reads_merchant_center_structure_v1` — merchant center alt hesapları; merchant center availability
 - `platform_reads_merchant_center_v1` — merchant center; merchant center conversion value
 - `platform_reads_meta_activity_v1` — Meta performans oku; how many purchases on meta
 - `platform_reads_meta_changes_v1` — Meta değişiklik geçmişi; meta recommendations
