@@ -92,11 +92,13 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_travel_v1` — Google otel sınıfına göre performans; hotel performance by city
 - `platform_reads_google_v1` — google ads; ad approval status google
 - `platform_reads_ikas_v1` — ikas; ikas product catalogue
+- `platform_reads_klaviyo_v1` — klaviyo campaigns; klaviyo kampanyaları
 - `platform_reads_linkedin_activity_v1` — linkedin spend; linkedin ad level report
 - `platform_reads_linkedin_v1` — linkedin; linkedin reklamı neden reddedildi
 - `platform_reads_merchant_center_structure_v1` — merchant center alt hesapları; merchant center availability
 - `platform_reads_merchant_center_v1` — merchant center; merchant center conversion value
 - `platform_reads_meta_activity_v1` — Meta performans oku; how many purchases on meta
+- `platform_reads_meta_catalog_v1` — meta catalog products; meta katalog feed zamanlaması
 - `platform_reads_meta_changes_v1` — Meta değişiklik geçmişi; meta recommendations
 - `platform_reads_meta_segments_v1` — Meta kırılımları; meta creative asset breakdown
 - `platform_reads_meta_social_v1` — bağlı facebook sayfalarını listele; organic reach and views
