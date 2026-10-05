@@ -115,6 +115,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_singular_segments_v1` — Singular kırılımları; singular filter by app
 - `platform_reads_singular_v1` — singular; singular tracking links
 - `platform_reads_snapchat_v1` — snapchat performans; snapchat ad account list
+- `platform_reads_tag_manager_v1` — GTM container denetimi; is the GA4 tag installed in GTM
 - `platform_reads_ticimax_v1` — ticimax siparişlerim; ticimax orders
 - `platform_reads_tiktok_activity_v1` — TikTok performans oku; tiktok view-through conversions
 - `platform_reads_tiktok_segments_v1` — TikTok ülke kırılımı; tiktok hourly breakdown
