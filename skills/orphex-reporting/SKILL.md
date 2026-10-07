@@ -6,9 +6,9 @@ description: >-
   templates the workspace can use rather than inventing a structure. Use it whenever someone
   asks for a report, a recap, a summary document or a deck's worth of numbers over Orphex
   data. It carries the workflow: list the report skeletons the workspace is eligible for,
-  read the one that fits, fill each section with the measurements it names, then render. The skeletons and their section lists live on the
-  server and are read live every time; nothing about a specific report is shipped in this
-  file.
+  read the one that fits, fill each section with the measurements it names, then render.
+  The skeletons and their section lists live on the server and are read live every time;
+  nothing about a specific report is shipped in this file.
 ---
 
 # Orphex reporting
@@ -72,8 +72,8 @@ Every number in a finished report must come from a call made in this conversatio
 ## 4. Render
 
 Produce the finished report on your own document or canvas surface — one document, sections
-in the template's order, with its headings. Orphex does not render it for you and there is no
-"send report" verb here: the deliverable is yours to present.
+in the template's order, with its headings. Orphex does not render or send it for you: the
+deliverable is yours to present.
 
 State the window and the workspace at the top. Where the report will be read by someone who
 was not in the conversation, say which figures were adjusted and when the data was produced.
@@ -84,9 +84,6 @@ Report templates are Knowledge Library content, not code, so this map lists none
 `skill_catalog` call in step 1 is the only list.
 
 <!-- generated: routing -->
-
-Each line is one `report_template` entry: its id, then a sample of the Turkish and English phrases that indicate it.
-
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 

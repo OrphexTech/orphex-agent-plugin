@@ -2,15 +2,16 @@
 name: orphex-actions
 description: >-
   Make a change the person asks for over an Orphex MCP connection — pause or enable a
-  campaign, change a budget or a bid, create a campaign, ad set or ad, add negative
-  keywords, upload media, undo an earlier change, or approve, reject or
-  cancel a change that is waiting — and only when the person asked for that change. It
-  carries the approval-first write flow: find and describe the write, propose it, show
-  the person the preview, execute only after they approve, report the outcome from the
-  request's own status, and undo through a new proposal. Nothing runs without the
-  person's approval. Do not use it to answer what the numbers are or to build a report;
-  those are orphex-analyst and orphex-reporting. On a connection whose plan or workspace
-  does not have writes switched on it says what the server says and changes nothing.
+  campaign, change a budget or a bid, create a campaign, ad set or ad, add or remove
+  negative keywords, upload media, change Tag Manager, GA4, Singular or Insider catalog
+  settings, undo an earlier change, or approve, reject or cancel a change that is waiting
+  — and only when the person asked for that change. It carries the approval-first write
+  flow: find and describe the write, propose it, show the person the preview, execute only
+  after they approve, report the outcome from the request's own status, and undo through a
+  new proposal. Nothing runs without the person's approval. Do not use it to answer what
+  the numbers are or to build a report; those are orphex-analyst and orphex-reporting. On
+  a connection whose plan or workspace does not have writes switched on it says what the
+  server says and changes nothing.
 ---
 
 # Orphex actions
@@ -18,8 +19,9 @@ description: >-
 ## When this applies
 
 The person has asked, in this conversation, for something to change: a campaign's status,
-a budget, a bid, a new entity, an upload, an undo, or a decision on a change that
-is already waiting — anything that runs through `action_propose`. Reading and reporting are `orphex-analyst` and `orphex-reporting`;
+a budget, a bid, a new entity, an upload, a tracking or analytics setting, an undo, or a
+decision on a change that is already waiting — anything that runs through
+`action_propose`. Reading and reporting are `orphex-analyst` and `orphex-reporting`;
 nothing here applies to a question that only asks what the numbers are, and a finding from
 an analysis is a recommendation to put to the person, never a change to make on their
 behalf.

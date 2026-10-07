@@ -9,13 +9,33 @@ carries the approval-first flow for making a change you ask for, such as a budge
 bid or a campaign's status: Claude shows you a preview, waits for your approval, and
 only then makes the change.
 
+## Install
+
+You need an Orphex account with at least one workspace.
+
+**Claude Code.** Add this repository as a plugin marketplace, then install the plugin
+from it:
+
+```
+/plugin marketplace add OrphexTech/orphex-agent-plugin
+/plugin install orphex@orphex
+```
+
+The first Orphex call opens your browser on the Orphex sign-in page. Claude Code receives
+the sign-in on port 33418 of your machine, so that port has to be free while you sign
+in. To pick up a newer release later, run `/plugin marketplace update orphex`.
+
+**Claude apps (claude.ai, Claude Desktop).** Connect Orphex by following the Claude setup
+steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
+
 ## What the plugin contains
 
 - Four skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
     campaign, changing a budget or a bid, creating a campaign, ad set or ad, adding
-    negative keywords, uploading media or undoing an earlier change, through the
-    approval-first flow described below.
+    negative keywords, uploading media, changing Tag Manager, GA4, Singular or Insider
+    catalog settings, or undoing an earlier change, through the approval-first flow
+    described below.
   - `orphex-analyst` — answers questions about what the numbers are, why they moved
     and what to do about it, and routes each one to the prepared method that fits.
   - `orphex-platform-reads` — routes a question that names one advertising platform to
@@ -106,3 +126,13 @@ managed at [orphex.co](https://orphex.co).
 ## Support
 
 Questions and problems: [support@orphex.co](mailto:support@orphex.co).
+
+## About this repository
+
+This repository is published from Orphex's own source by a release workflow, so changes
+are not made here and pull requests are not merged. Send problems and suggestions to the
+support address above.
+
+## License
+
+Copyright 2026 Orphex. Licensed under the Apache License, Version 2.0; see `LICENSE`.
