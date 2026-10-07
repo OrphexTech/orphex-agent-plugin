@@ -59,26 +59,28 @@ one, and `capability_search` / `capability_describe` fall back to it — but `ru
 not: name the workspace on every call once more than one is bound, or the answer is silently
 about the wrong account.
 
-Describe each of the following ids first and echo its `data.contract_ref` on `run_read`:
+On first contact, before any metric call:
 
-- `run_read` on `workspaces.list` to see what this connection is bound to.
-- `run_read` on `workspace.brief` on first contact with a workspace, before any metric call.
-  It says what the workspace is, what is connected to it and what its reporting conventions
-  are — which is what stops the first fetch from being a guess.
+- `run_read` on `workspaces.list` to see what this connection is bound to — describe it
+  first and echo its `data.contract_ref`.
+- `capability_search` with no arguments, for the workspace the answer is about. Its overview
+  by family and platform says which platforms are connected and which reads this workspace
+  opens — which is what stops the first read from being a guess.
 
 What is open differs per workspace. Never carry an id, a metric name or an eligibility
 conclusion from one workspace to another.
 
 ## 3. Vocabulary before numbers
 
-`controller.catalog` before `controller.fetch`, always. Metric and dimension names are
-specific to the workspace and to the data level being asked about; they are not a fixed
-vocabulary and they are not guessable from the platform's own naming. Read the catalog for
-the level you intend to fetch, then fetch only the names it published.
+`capability_describe` before `run_read`, always. Metric and dimension names are specific to
+the workspace, the platform and the data level being asked about; they are not a fixed
+vocabulary and they are not guessable from another platform's naming. Read what the describe
+response and the read's own guide publish for the level you intend to read, then ask only for
+the names they published.
 
-The same rule holds one level up: ask `capability_search` what reads exist before assuming a
-question needs `controller.fetch` at all. Many questions have a purpose-built capability that
-answers better than a hand-assembled fetch.
+The same rule holds one level up: ask `capability_search` what reads exist before assembling
+an answer from a general performance read. Many questions have a purpose-built capability
+that answers better than a hand-assembled one.
 
 ## 4. The date window
 
@@ -97,15 +99,16 @@ and it belongs in the answer whenever freshness could change the reader's decisi
 
 Work in a loop rather than one large query: start broad, drill one step at a time, and let each result decide the next.
 
-1. **Discover the vocabulary** — catalog first, so the fetch asks for names that exist.
+1. **Discover the vocabulary** — describe first, so the read asks for names that exist.
 2. **Fetch small and targeted.** A narrow, well-scoped read that answers one question beats a
    wide one whose rows still have to be interpreted.
 3. **Drill one step at a time.** Let each result choose the next call: workspace → platform →
    campaign → below, never all four at once.
-4. **Cross-check before concluding.** Describe each id and echo its `data.contract_ref`. Use `run_read` on `anomaly.read` for what the system already
-   flagged as surprising, and on `insights.read` for the standing findings. A driver you
-   derived that the platform never flagged, and a flag you cannot reproduce in the numbers,
-   are both worth a sentence.
+4. **Cross-check before concluding.** Describe each id and echo its `data.contract_ref`.
+   Where two reads cover the same figure — an ad platform and the analytics property, or two
+   levels of the same account — compare them, and read the account's change history for what
+   moved it. A driver the numbers suggest that no change explains, and a change that left no
+   trace in the numbers, are both worth a sentence.
 5. **Report contradictions instead of forcing a story.** When two reads disagree, say so and
    say which is closer to the source. A confident wrong narrative costs more than an honest
    open question.
@@ -127,9 +130,9 @@ This is the rule most often broken, and the one that produces a confidently wron
   the period's ROAS or CPC — it weights a €10 day the same as a €10,000 one. This is true
   across days and across rows alike, and it is wrong in both directions, so it cannot be
   waved away as a rounding difference.
-- **Prefer the server's own aggregate.** Ask `controller.fetch` for the period you want and
-  report what it returns, rather than fetching daily rows and recomputing. Re-deriving a
-  figure the backend already computed is where a rule mismatch enters.
+- **Prefer the read's own aggregate.** Ask the read for the period you want and report what
+  it returns, rather than fetching daily rows and recomputing. Re-deriving a figure the
+  source already computed is where a rule mismatch enters.
 - **Never sum money across currencies.** A set of amounts in more than one currency is not a
   total; report them apart, or ask for the workspace's own reporting figure.
 

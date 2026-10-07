@@ -1,9 +1,10 @@
 {
   "name": "orphex",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Method, routing and an approval-first change flow for the Orphex advertising-analytics MCP connection: how to find a capability, address a workspace, read the metric vocabulary before the numbers, which prepared method or report template answers an intent, and how to make a change the person asks for — preview, their explicit approval, then the change.",
   "author": {
     "name": "Orphex",
     "url": "https://orphex.co"
-  }
+  },
+  "privacyPolicyUrl": "https://orphex.co/en/privacy-policy"
 }

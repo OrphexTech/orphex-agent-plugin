@@ -5,9 +5,8 @@ description: >-
   an executive summary, a creative or account review — by filling one of the report
   templates the workspace can use rather than inventing a structure. Use it whenever someone
   asks for a report, a recap, a summary document or a deck's worth of numbers over Orphex
-  data. It carries the workflow: check for a prepared playbook first, list the report
-  skeletons the workspace is eligible for, read the one that fits, fill each section with the
-  measurements it names, then render. The skeletons and their section lists live on the
+  data. It carries the workflow: list the report skeletons the workspace is eligible for,
+  read the one that fits, fill each section with the measurements it names, then render. The skeletons and their section lists live on the
   server and are read live every time; nothing about a specific report is shipped in this
   file.
 ---
@@ -23,16 +22,6 @@ this file is about the shape of the deliverable and where that shape comes from.
 The shape is never invented. Orphex publishes report skeletons every workspace can use, an
 account or workspace can publish its own beside them, and one of them is almost always closer
 to what the reader expects than anything assembled by hand.
-
-## 0. Check for a shortcut first
-
-Before assembling anything, `run_read` on `playbook.catalog`. A **playbook** may package the
-whole analysis — the calls, the ordering and the synthesis — into a single `playbook.run`.
-When one fits the request, that is one round-trip instead of a dozen, and its output is the
-report's spine.
-
-If no playbook fits, continue below. If one nearly fits, run it and fill the gaps with your
-own calls rather than discarding it.
 
 ## 1. List the skeletons
 
@@ -106,5 +95,4 @@ Each line is one `report_template` entry: its id, then a sample of the Turkish a
 ## What this file deliberately does not carry
 
 - **No templates.** Section lists and the measurements they name live in `skill_read`.
-- **No playbook list.** `playbook.catalog` is the authority, per workspace.
 - **No schemas or eligibility.** Both are live, per connection and per workspace.

@@ -3,7 +3,7 @@ name: orphex-actions
 description: >-
   Make a change the person asks for over an Orphex MCP connection — pause or enable a
   campaign, change a budget or a bid, create a campaign, ad set or ad, add negative
-  keywords, upload media, set up an alert, undo an earlier change, or approve, reject or
+  keywords, upload media, undo an earlier change, or approve, reject or
   cancel a change that is waiting — and only when the person asked for that change. It
   carries the approval-first write flow: find and describe the write, propose it, show
   the person the preview, execute only after they approve, report the outcome from the
@@ -18,7 +18,7 @@ description: >-
 ## When this applies
 
 The person has asked, in this conversation, for something to change: a campaign's status,
-a budget, a bid, a new entity, an upload, an alert, an undo, or a decision on a change that
+a budget, a bid, a new entity, an upload, an undo, or a decision on a change that
 is already waiting — anything that runs through `action_propose`. Reading and reporting are `orphex-analyst` and `orphex-reporting`;
 nothing here applies to a question that only asks what the numbers are, and a finding from
 an analysis is a recommendation to put to the person, never a change to make on their
