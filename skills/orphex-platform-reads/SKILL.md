@@ -4,12 +4,12 @@ description: >-
   Route a question that names an advertising platform to the Orphex guide that documents
   that platform's own live reads — Google, Meta, TikTok, LinkedIn, Pinterest, Apple Ads,
   X Ads, Snapchat, OpenAI Ads, Meta organic pages, Yandex, Criteo, GA4, Adjust, AppsFlyer,
-  App Store Connect, Google Play, Merchant Center, Search Console, Shopify, IKAS, Ticimax and
-  T-Soft. Use it when the
-  answer has to be what the platform says right now — current accounts and their settings,
-  live entity status, fresh performance, recent changes, provider recommendations — rather
-  than Orphex's stored analytics, and use the analyst skill for the method that surrounds
-  the call. Each provider's guide states the tools it serves, the metric and dimension
+  App Store Connect, Google Play, Merchant Center, Search Console, Google Tag Manager,
+  Singular, Klaviyo, Shopify, IKAS, Ticimax and T-Soft. Use it when the answer has to be
+  what the platform says right now — current accounts and their settings, live entity
+  status, fresh performance, recent changes, provider recommendations — rather than
+  Orphex's stored analytics, and use the analyst skill for the method that surrounds the
+  call. Each provider's guide states the tools it serves, the metric and dimension
   vocabulary it publishes, and the shapes it refuses; this file names which one to open.
 ---
 
@@ -44,21 +44,21 @@ the source-routing doctrine entry before reporting an absence as a fact about th
 
 > capability_describe(id, workspace ws-N) returns input schema, requirements, write_protocol, the guides explaining it and data.contract_ref.
 
-The row below is pre-knowledge for choosing among them without a round-trip. It is not the
-authority: eligibility is decided per workspace and the corpus moves without this package
-moving, so `skill_catalog` is what exists and `skill_read` is what it says. **Always
+The routing map below is pre-knowledge for choosing among them without a round-trip. It is
+not the authority: eligibility is decided per workspace and the corpus moves without this
+package moving, so `skill_catalog` is what exists and `skill_read` is what it says. **Always
 `skill_read` the live entry before executing its flow.** A guide this workspace is not
 eligible for is withheld whole, which is the connection speaking and not an error to work
 around.
 
-Two rows are worth knowing before you pick one. The **shared** entries carry what is true
-of every provider — the refs, coverage and paging discipline, and the account and entity
-walk — and a provider's own entry carries only what is different about it, so a
-platform-named question is answered from the provider's entry with the shared rules already
-in hand. And a busy provider is **more than one entry**: its halves divide on the question
-a reader arrives with — what an account is set to, what it did, what changed, how the
-numbers break down — so pick the half that matches the question rather than the first row
-whose name matches the platform.
+Two things are worth knowing before you pick a row. The **shared** entries, the
+`platform_management_reads` rows, carry what is true of every provider — the refs,
+coverage and paging discipline, and the account and entity walk — and a provider's own
+entry carries only what is different about it, so a platform-named question is answered
+from the provider's entry with the shared rules already in hand. And a busy provider is
+**more than one entry**: its halves divide on the question a reader arrives with — what an
+account is set to, what it did, what changed, how the numbers break down — so pick the half
+that matches the question rather than the first row whose name matches the platform.
 
 ## Routing map
 
@@ -85,7 +85,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_analytics_v1` — ga4; which app does this GA4 property measure
 - `platform_reads_google_assets_v1` — Google başlık hangi pozisyona pinli; which ads use this asset
 - `platform_reads_google_changes_v1` — Google değişiklik geçmişi; google recommendations
-- `platform_reads_google_conversions_v1` — dönüşüm hedefleri; click type breakdown
+- `platform_reads_google_conversions_v1` — dönüşüm hedefleri; conversion label
 - `platform_reads_google_criteria_v1` — Google kampanya ülke kırılımı; which audience is profitable
 - `platform_reads_google_segments_v1` — Google kırılımları neler; placement performance
 - `platform_reads_google_studies_v1` — Google deneyi anlamlı mı; did my ads lift awareness

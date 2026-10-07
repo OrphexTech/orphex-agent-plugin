@@ -14,8 +14,9 @@ only then makes the change.
 - Four skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
     campaign, changing a budget or a bid, creating a campaign, ad set or ad, adding
-    negative keywords, uploading media or undoing an earlier change, through the
-    approval-first flow described below.
+    negative keywords, uploading media, changing Tag Manager, GA4, Singular or Insider
+    catalog settings, or undoing an earlier change, through the approval-first flow
+    described below.
   - `orphex-analyst` — answers questions about what the numbers are, why they moved
     and what to do about it, and routes each one to the prepared method that fits.
   - `orphex-platform-reads` — routes a question that names one advertising platform to
@@ -106,6 +107,16 @@ managed at [orphex.co](https://orphex.co).
 ## Support
 
 Questions and problems: [support@orphex.co](mailto:support@orphex.co).
+
+## About this repository
+
+This repository is published from Orphex's own source by a release workflow, so changes
+are not made here and pull requests are not merged. Send problems and suggestions to the
+support address above.
+
+## License
+
+Copyright 2026 Orphex. Licensed under the Apache License, Version 2.0; see `LICENSE`.
 
 ## Upload to ChatGPT
 
