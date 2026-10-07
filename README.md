@@ -14,8 +14,8 @@ only then makes the change.
 - Four skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
     campaign, changing a budget or a bid, creating a campaign, ad set or ad, adding
-    negative keywords, uploading media, setting up an alert or undoing an earlier
-    change, through the approval-first flow described below.
+    negative keywords, uploading media or undoing an earlier change, through the
+    approval-first flow described below.
   - `orphex-analyst` — answers questions about what the numbers are, why they moved
     and what to do about it, and routes each one to the prepared method that fits.
   - `orphex-platform-reads` — routes a question that names one advertising platform to
@@ -81,8 +81,8 @@ Replace the names below with your own campaigns and workspaces.
 - "Why did our ROAS on Meta drop last week compared with the week before?" — an
   analysis, answered with the `orphex-analyst` method from read-only calls.
 - "Build the monthly performance report for September." — a report, built by
-  `orphex-reporting`, which starts from a prepared playbook or report template when the
-  workspace has one.
+  `orphex-reporting`, which starts from a prepared report template when the workspace
+  has one.
 - "Which of our TikTok campaigns are active right now, and what budget is each one
   on?" — a live read from the platform itself, routed by `orphex-platform-reads` to
   the TikTok guide.

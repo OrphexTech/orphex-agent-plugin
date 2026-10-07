@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "orphex",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Method, routing and an approval-first change flow for the Orphex advertising-analytics MCP connection: how to find a capability, address a workspace, read the metric vocabulary before the numbers, which prepared method or report template answers an intent, and how to make a change the person asks for — preview, their explicit approval, then the change.",
   "author": {
     "name": "Orphex",
@@ -38,8 +38,8 @@
             {
               "description": "First contact: which workspace the connection is bound to and what is connected to it",
               "prompt": "I'm new to this Orphex connection. Which account am I looking at, and what ad platforms and data sources are hooked up to it?",
-              "tools_triggered": "run_read",
-              "expected_behavior": "Lists the workspaces the connection is bound to, reads the workspace brief, and names the workspace and the ad platforms and data sources connected to it."
+              "tools_triggered": "run_read, capability_search",
+              "expected_behavior": "Lists the workspaces the connection is bound to, reads the capability overview, and names the workspace and the ad platforms and data sources connected to it."
             },
             {
               "description": "A campaign ranking that needs a read the assistant has to find first",
@@ -60,10 +60,10 @@
               "expected_behavior": "Lists the method guides and reads the matching one before assembling any analysis."
             },
             {
-              "description": "A client report built from the workspace's prepared playbooks and report templates",
+              "description": "A client report built from the workspace's report templates",
               "prompt": "Put together last week's performance report for the client.",
-              "tools_triggered": "run_read, skill_catalog",
-              "expected_behavior": "Checks the prepared playbooks and the report templates, and returns a report that states its period and workspace at the top and carries no placeholder figures."
+              "tools_triggered": "skill_catalog",
+              "expected_behavior": "Checks the report templates, and returns a report that states its period and workspace at the top and carries no placeholder figures."
             }
           ],
           "negative": [
