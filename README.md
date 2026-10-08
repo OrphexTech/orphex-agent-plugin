@@ -28,6 +28,11 @@ in. To pick up a newer release later, run `/plugin marketplace update orphex`.
 **Claude apps (claude.ai, Claude Desktop).** Connect Orphex by following the Claude setup
 steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
 
+**Codex and ChatGPT.** OpenAI's plugin directory is shared by ChatGPT and Codex. Once Orphex
+is listed there, install it in Codex CLI by running `codex` and then `/plugins`, and in
+ChatGPT from the same directory. The OpenAI build of this plugin is on this repository's
+`openai` branch.
+
 ## What the plugin contains
 
 - Four skills, written as plain Markdown instructions:
@@ -47,6 +52,10 @@ steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
 
 It contains no hooks, commands, agents, scripts or executables, installs no packages,
 and runs no code on your machine.
+
+These skills work through the Orphex connection. For portable marketing-analysis skills
+that work from exports you supply and use an Orphex connection when one is present, see
+[Orphex Agent Skills](https://github.com/OrphexTech/agent-skills).
 
 ## What it connects to
 
