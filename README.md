@@ -29,6 +29,10 @@ only then makes the change.
 It contains no hooks, commands, agents, scripts or executables, installs no packages,
 and runs no code on your machine.
 
+These skills work through the Orphex connection. For portable marketing-analysis skills
+that work from exports you supply and use an Orphex connection when one is present, see
+[Orphex Agent Skills](https://github.com/OrphexTech/agent-skills).
+
 ## What it connects to
 
 The plugin connects to exactly one endpoint, over HTTPS:
