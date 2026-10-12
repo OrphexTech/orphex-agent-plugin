@@ -153,6 +153,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board
 - `sheets_export_v1` — sheets'e aktar; write this table to a google sheet
+- `shopify_gtm_setup_v1` — Shopify mağazama GTM kur; add the Meta pixel to Shopify through Tag Manager
 - `singular_fraud_rule_change_v1` — Singular fraud kuralı ekle; edit a singular fraud rule
 - `singular_publisher_blacklist_change_v1` — Singular publisher blacklist'e ekle; block a publisher's installs in singular
 - `singular_tracking_link_create_v1` — Singular tracking link oluştur; make a custom singular link
