@@ -28,14 +28,15 @@ behalf.
 
 ## When this connection cannot write
 
-The write tools are listed when the account's plan includes writes and a bound workspace
-has them switched on. So there are two shapes of "no", and neither is a problem to solve
+The write tools are listed on every plan. On a plan without writes they reach only
+connecting an ad account and filing a feature request, and every other change is refused
+naming the plan. So there are two shapes of "no", and neither is a problem to solve
 around.
 
 **`action_propose` is not among this connection's tools.** This connection cannot make
 changes. Say so, and do not look for another tool to make the change with. A missing tool
-alone does not say whether the cause is the plan, a role, a workspace setting or the
-provider, so read the plan before naming one.
+alone does not say whether the cause is a role, a workspace setting or the provider, so
+read the plan before naming one.
 
 > For plans or missing writes, find and run plan.read before explaining access.
 
