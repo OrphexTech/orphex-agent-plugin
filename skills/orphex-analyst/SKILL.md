@@ -30,7 +30,7 @@ and no data surface at all.
 
 ## 1. Find the capability, then call it
 
-> capability_search, first with no arguments (an overview by family and platform), then narrowed.
+> capability_search, first with no arguments for an overview, then narrowed.
 
 Start with `capability_search` and no arguments: the answer is an overview of what this
 connection reaches, counted by family and by platform. Narrow from there with `family`,
@@ -154,7 +154,7 @@ matters, the `as_of`. Say what the evidence did not settle rather than rounding 
 
 ## Prepared methods come first
 
-> skill_catalog lists methods, change procedures and doctrine; skill_read one before building an analysis or change by hand
+> skill_catalog lists methods, procedures and doctrine; skill_read one before building an analysis or change by hand
 
 `skill_catalog` and `skill_read` are called directly — they are the door onto the prepared
 methods and they do not go through the discovery loop. The routing map below is
