@@ -38,7 +38,7 @@ changes. Say so, and do not look for another tool to make the change with. A mis
 alone does not say whether the cause is a role, a workspace setting or the provider, so
 read the plan before naming one.
 
-> For plans or missing writes, find and run plan.read before explaining access.
+> For plan or missing-write questions, run plan.read first.
 
 **The tool is listed but the call is refused.** A workspace that has switched writes off,
 or a plan without them, refuses the call with a sentence written to be passed on: it says
@@ -55,7 +55,7 @@ the live entry you read in step 1.
 
 ### 1. Find the write, describe it, read its procedure
 
-> capability_search, first with no arguments (an overview by family and platform), then narrowed.
+> capability_search, first with no arguments for an overview, then narrowed.
 
 The change has its own capability: each platform and each action has its own propose door,
 and a new entity has its own create door. Describe the one you found for the workspace the
@@ -63,7 +63,7 @@ person means, and read `write_protocol` off that answer before anything else.
 
 > Run: contract_ref and workspace at the top level, the target's own arguments inside inputs.
 
-> skill_catalog lists methods, change procedures and doctrine; skill_read one before building an analysis or change by hand
+> skill_catalog lists methods, procedures and doctrine; skill_read one before building an analysis or change by hand
 
 The routing map below lists the change procedures. `skill_read` the one that fits before
 proposing; `safe_actions_usage_v1` and `action_handshake_v1` are the guides for the steps
@@ -72,7 +72,7 @@ or from the person, never from a guess.
 
 ### 2. Propose — `write_protocol` decides what that does
 
-> Write: action_propose; write_protocol decides what happens.
+> Write: action_propose per write_protocol.
 
 > two_step returns a preview and confirm_token, and only action_confirm executes it.
 

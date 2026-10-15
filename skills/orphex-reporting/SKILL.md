@@ -25,7 +25,7 @@ to what the reader expects than anything assembled by hand.
 
 ## 1. List the skeletons
 
-> skill_catalog lists methods, change procedures and doctrine; skill_read one before building an analysis or change by hand
+> skill_catalog lists methods, procedures and doctrine; skill_read one before building an analysis or change by hand
 
 Call `skill_catalog` with `kind` set to `report_template`. Each row carries a title, a summary
 and the phrases that indicate it, filtered to what **this** workspace is eligible for: Orphex's

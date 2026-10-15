@@ -42,7 +42,7 @@ the source-routing doctrine entry before reporting an absence as a fact about th
 
 ## Open the guide before the flow
 
-> capability_describe(id, workspace ws-N) returns input schema, requirements, write_protocol, the guides explaining it and data.contract_ref.
+> capability_describe(id, workspace ws-N) returns input schema, requirements, write_protocol, guides and data.contract_ref.
 
 The routing map below is pre-knowledge for choosing among them without a round-trip. It is
 not the authority: eligibility is decided per workspace and the corpus moves without this
