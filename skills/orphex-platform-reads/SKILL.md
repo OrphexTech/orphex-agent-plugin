@@ -72,6 +72,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_adjust_activity_v1` — install sayısı; mmp attribution read
 - `platform_reads_adjust_segments_v1` — Adjust haftalık kırılım; installs by source app
 - `platform_reads_adjust_v1` — adjust; adjust partner forwarding
+- `platform_reads_akinon_v1` — akinon ürünlerim; connected akinon stores
 - `platform_reads_app_store_v1` — App Store Connect uygulamalarını listele; read average App Store rating without review text
 - `platform_reads_apple_ads_activity_v1` — Apple Ads performans; Apple Ads async rapor
 - `platform_reads_apple_ads_v1` — apple ads; Apple Ads app screenshots and previews
