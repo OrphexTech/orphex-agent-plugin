@@ -198,6 +198,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_actions_prewrite_asset_reads_v1` — sayfa akışı; which assets served together
 - `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
+- `read_guidance_v1` — bir sonraki adımı öner; next step after this report
 - `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
 - `subscription_economics_v1` — abonelik geliri; subscription retention
 
