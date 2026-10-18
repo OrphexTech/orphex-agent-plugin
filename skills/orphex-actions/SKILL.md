@@ -146,6 +146,11 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `alerts_config_write_v1` — alert kur; pause an alert
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
+- `emarsys_campaign_draft_write_v1` — Emarsys e-posta kampanyası oluştur; stop an emarsys campaign
+- `emarsys_product_catalog_write_v1` — Emarsys ürün kataloğuna ürün yükle; update emarsys product prices or availability
+- `emarsys_segment_create_v1` — Emarsys segmenti oluştur; build an emarsys segment from contact criteria
+- `emarsys_segment_criteria_update_v1` — Emarsys segment kriterlerini değiştir; update the rules of an emarsys segment
+- `emarsys_segment_delete_v1` — Emarsys segmentini sil; remove an emarsys segment
 - `entity_create_v1` — yeni kampanya aç; tiktok smart plus
 - `google_analytics_property_write_v1` — GA4 custom dimension oluştur; create a GA4 custom dimension
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results
