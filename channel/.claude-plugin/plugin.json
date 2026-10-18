@@ -1,0 +1,16 @@
+{
+  "name": "orphex-channel",
+  "version": "1.0.21",
+  "description": "A Claude Code channel that pushes Orphex events into a running session: a change request waiting for approval or confirm, one about to expire or settled, an ad disapproved, spend running into a cap, a connected account that lost access, a report that finished. Read with the MCP Events extension's events/poll; one-way.",
+  "author": {
+    "name": "Orphex",
+    "url": "https://orphex.co"
+  },
+  "repository": "https://github.com/OrphexTech/orphex-agent-plugin",
+  "license": "Apache-2.0",
+  "homepage": "https://orphex.co",
+  "documentationUrl": "https://mcp.orphex.co/skills/docs",
+  "supportUrl": "https://mcp.orphex.co/support",
+  "privacyPolicyUrl": "https://orphex.co/en/privacy-policy",
+  "termsOfServiceUrl": "https://orphex.co/en/terms-of-service"
+}

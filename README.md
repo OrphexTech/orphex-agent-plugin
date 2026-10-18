@@ -25,6 +25,12 @@ The first Orphex call opens your browser on the Orphex sign-in page. Claude Code
 the sign-in on port 33418 of your machine, so that port has to be free while you sign
 in. To pick up a newer release later, run `/plugin marketplace update orphex`.
 
+**Orphex events in your Claude Code session (optional).** The same marketplace carries a
+second plugin, `orphex-channel`: a Claude Code channel that pushes what happens in your
+workspaces (a change waiting for your approval, an ad disapproved, a budget running out)
+into the session you have open. Install it with `/plugin install orphex-channel@orphex` and
+see `channel/README.md` for how to turn it on; it needs Node.js 20 or later.
+
 **Claude apps (claude.ai, Claude Desktop).** Connect Orphex by following the Claude setup
 steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
 

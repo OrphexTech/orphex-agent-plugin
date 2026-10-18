@@ -1,0 +1,14 @@
+{
+  "orphex-channel": {
+    "command": "node",
+    "args": [
+      "${CLAUDE_PLUGIN_ROOT}/bridge.mjs"
+    ],
+    "env": {
+      "ORPHEX_MCP_URL": "https://api.orphex.co/api/interaction-gateway/v1/mcp",
+      "ORPHEX_CLIENT_ID": "z350XlBKlenZ2uPDSPRECaM0EpY7cbkU",
+      "ORPHEX_CALLBACK_PORT": "33418",
+      "ORPHEX_CHANNEL_DIR": "${CLAUDE_PLUGIN_DATA}"
+    }
+  }
+}
