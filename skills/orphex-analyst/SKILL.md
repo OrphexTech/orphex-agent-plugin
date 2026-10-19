@@ -184,6 +184,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 
 - `action_handshake_v1` — onay bekleyen değişiklik; approve a pending action
 - `ad_policy_status_v1` — reklam onaylandı mı; which headlines were disapproved
+- `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
 - `change_history_read_v1` — ne değişti; who paused my campaign
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
@@ -192,6 +193,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_aggregation_doctrine_v1` — toplam roas nasıl hesaplanıyor; what does basis mean
 - `orphex_attribution_doctrine_v1` — conversions neyi sayıyor; why is the mmp install count different
 - `orphex_currency_doctrine_v1` — kur çevrimi yapılıyor mu; why does orphex differ from the platform
+- `orphex_evidence_and_claims_doctrine_v1` — bu rakam ölçülmüş mü yoksa varsayım mı; is this measured or assumed
 - `orphex_freshness_and_windows_doctrine_v1` — veri ne kadar güncel; what does as_of mean
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
