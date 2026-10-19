@@ -33,6 +33,8 @@ see `channel/README.md` for how to turn it on; it needs Node.js 20 or later.
 
 **Claude apps (claude.ai, Claude Desktop).** Connect Orphex by following the Claude setup
 steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
+To upload the plugin to a Claude app, use the `orphex-vX.Y.Z.zip` attached to the
+[latest release](https://github.com/OrphexTech/orphex-agent-plugin/releases/latest).
 
 **Codex and ChatGPT.** OpenAI's plugin directory is shared by ChatGPT and Codex. Once Orphex
 is listed there, install it in Codex CLI by running `codex` and then `/plugins`, and in
