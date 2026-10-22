@@ -186,6 +186,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `ad_policy_status_v1` — reklam onaylandı mı; which headlines were disapproved
 - `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
 - `change_history_read_v1` — ne değişti; who paused my campaign
+- `creative_fatigue_diagnosis_v1` — kreatif yorgunluğu; creative fatigue
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
 - `native_pacing_spend_review_v1` — native spend pacing review; native bütçe pacing incelemesi
@@ -201,6 +202,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
 - `read_guidance_v1` — bir sonraki adımı öner; next step after this report
+- `roas_drop_diagnosis_v1` — ROAS düştü; how do I diagnose a ROAS drop
 - `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
 - `subscription_economics_v1` — abonelik geliri; subscription retention
 
