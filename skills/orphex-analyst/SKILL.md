@@ -165,9 +165,8 @@ themselves are never shipped here, so this file can go out of date about what ex
 never assert a stale procedure.
 
 The analyses asked for most are Knowledge Library guides that the routing map below does not
-list: investigating an anomaly, a weekly account health review, reallocating budget, creative
-fatigue, comparing platforms, pacing against a target, search-term hygiene and brand
-incrementality. When a question has one of those shapes, call `skill_catalog` with `kind`
+list: investigating an anomaly, reallocating budget, comparing platforms, search-term hygiene
+and brand incrementality. When a question has one of those shapes, call `skill_catalog` with `kind`
 `guide` and `skill_read` the row whose phrases match it before building the analysis by hand.
 Their ids and titles can change without this package changing, so find them by intent; never
 reuse an id from memory. A family missing from the list is not available to this workspace;

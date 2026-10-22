@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "orphex",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Method, routing and an approval-first change flow for the Orphex advertising-analytics MCP connection: how to find a capability, address a workspace, read the metric vocabulary before the numbers, which prepared method or report template answers an intent, and how to make a change the person asks for — preview, their explicit approval, then the change.",
   "author": {
     "name": "Orphex",
@@ -56,8 +56,8 @@
               "expected_behavior": "Reads the change-history method before running its read, then says who paused which campaign, or that no pause is on record in the window it covers."
             },
             {
-              "description": "A creative-fatigue check answered by a prepared method rather than by hand",
-              "prompt": "Our ads feel stale lately. Can you check whether we have a creative fatigue problem?",
+              "description": "A platform comparison answered by a prepared method rather than by hand",
+              "prompt": "Is Meta or Google working better for us lately? Can you compare the two platforms?",
               "tools_triggered": "skill_catalog, skill_read",
               "expected_behavior": "Lists the method guides and reads the matching one before assembling any analysis."
             },
