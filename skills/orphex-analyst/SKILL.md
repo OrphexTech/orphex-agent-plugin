@@ -189,7 +189,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
 - `native_pacing_spend_review_v1` — native spend pacing review; native bütçe pacing incelemesi
-- `new_account_orientation_v1` — hesabı tanı; how is this account set up
+- `new_account_orientation_v1` — hesabı tanı; what is connected in this workspace
 - `orphex_aggregation_doctrine_v1` — toplam roas nasıl hesaplanıyor; what does basis mean
 - `orphex_attribution_doctrine_v1` — conversions neyi sayıyor; why is the mmp install count different
 - `orphex_currency_doctrine_v1` — kur çevrimi yapılıyor mu; why does orphex differ from the platform
