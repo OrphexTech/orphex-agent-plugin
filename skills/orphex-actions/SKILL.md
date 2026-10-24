@@ -1,140 +1,116 @@
 ---
 name: orphex-actions
 description: >-
-  Make a change the person asks for over an Orphex MCP connection — pause or enable a
-  campaign, change a budget or a bid, create a campaign, ad set or ad, add or remove
-  negative keywords, upload media, change Tag Manager, GA4, Singular or Insider catalog
-  settings, undo an earlier change, or approve, reject or cancel a change that is waiting
-  — and only when the person asked for that change. It carries the approval-first write
-  flow: find and describe the write, propose it, show the person the preview, execute only
-  after they approve, report the outcome from the request's own status, and undo through a
-  new proposal. Nothing runs without the person's approval. Do not use it to answer what
-  the numbers are or to build a report; those are orphex-analyst and orphex-reporting. On
-  a connection whose plan or workspace does not have writes switched on it says what the
-  server says and changes nothing.
+  Make a change the person asks for over the Orphex connection in ChatGPT — change a Meta
+  campaign's budget, pause or enable a Meta or Google Ads ad, swap a Meta ad's creative,
+  add a Google Ads keyword, create a Meta campaign, ad set or ad creative, create ads in
+  bulk from a sheet, or approve, reject or cancel a change that is waiting — and only when
+  the person asked for that change. It carries the approval-first write flow: call the
+  change's own tool to get a preview, show the person the preview, execute only after they
+  approve, and report the outcome from the request's own status. Nothing runs without the
+  person's approval. Do not use it to answer what the numbers are or to build a report;
+  those are orphex-analyst and orphex-reporting. On a connection whose plan or workspace
+  does not have changes switched on it says what Orphex says and changes nothing.
 ---
 
 # Orphex actions
 
 ## When this applies
 
-The person has asked, in this conversation, for something to change: a campaign's status,
-a budget, a bid, a new entity, an upload, a tracking or analytics setting, an undo, or a
-decision on a change that is already waiting — anything that runs through
-`action_propose`. Reading and reporting are `orphex-analyst` and `orphex-reporting`;
-nothing here applies to a question that only asks what the numbers are, and a finding from
-an analysis is a recommendation to put to the person, never a change to make on their
-behalf.
+The person has asked, in this conversation, for something to change, or for a decision on a
+change that is already waiting. Reading and reporting are `orphex-analyst` and
+`orphex-reporting`; a finding from an analysis is a recommendation to put to the person,
+never a change to make on their behalf.
+
+> Changes: decide with the user, never for them.
+
+## The changes this connection offers
+
+Each change has its own tool, and calling it returns a preview — it changes nothing on the
+platform:
+
+- `platform_actions_propose_meta_campaign_budget_update` — a Meta campaign's budget.
+- `platform_actions_propose_meta_ad_status_update`,
+  `platform_actions_propose_google_ad_status_update` — pause or enable an ad.
+- `platform_actions_propose_meta_ad_creative_swap` — the creative a Meta ad serves.
+- `platform_actions_propose_google_keyword_add` — a keyword in a Google Ads ad group.
+- `platform_actions_create_propose_meta_campaign_create`,
+  `platform_actions_create_propose_meta_ad_set_create`,
+  `platform_actions_create_propose_meta_ad_creative_create` — a new Meta campaign, ad set or
+  ad creative.
+- `platform_actions_ad_bulk_create` — many ads from one sheet, in one approval.
+
+A change none of these covers cannot be made here. Say so plainly, do not reach for another
+tool to approximate it, and offer `capability_feature_request` — filed only once the person
+agrees.
 
 ## When this connection cannot write
 
-The write tools are listed on every plan. On a plan without writes they reach only
-connecting an ad account and filing a feature request, and every other change is refused
-naming the plan. So there are two shapes of "no", and neither is a problem to solve
-around.
+**No change tool is listed.** This connection cannot make changes. A missing tool alone
+does not say whether the cause is the plan, a workspace setting or a role, so call
+`plan_read` before naming one.
 
-**`action_propose` is not among this connection's tools.** This connection cannot make
-changes. Say so, and do not look for another tool to make the change with. A missing tool
-alone does not say whether the cause is a role, a workspace setting or the provider, so
-read the plan before naming one.
+**The tool is listed but the call is refused.** A workspace that has switched changes off,
+or a plan without them, refuses with a sentence written to be passed on.
 
-> For plan or missing-write questions, run plan.read first.
-
-**The tool is listed but the call is refused.** A workspace that has switched writes off,
-or a plan without them, refuses the call with a sentence written to be passed on: it says
-nothing was changed, and whether the fix is the plan or a workspace setting a workspace
-admin can switch back on. Pass that on as it reads.
-
-> relay actions_disabled and guardrail rejections instead of retrying them.
+> Relay actions_disabled and guardrail rejections instead of retrying them.
 
 ## The flow
 
-Every step below is the person's to decide and yours to carry out. The procedure for a
-given change — which door, which ids, which limits refuse it — is not in this file; it is
-the live entry you read in step 1.
+### 1. Get the ids from a read, or from the person
 
-### 1. Find the write, describe it, read its procedure
+The thing to change is addressed by ids that come from a read made on this connection —
+`platform_actions_ad_accounts_read`, `platform_actions_entities_read`,
+`platform_actions_account_assets_read`, `campaign_detail_read` — or from the person, never
+from a guess. A change procedure in the library carries the limits that refuse it:
+`skill_catalog` with kind `skill`, then `skill_read` the one that fits before calling the
+change's tool.
 
-> capability_search, first with no arguments for an overview, then narrowed.
+### 2. Call the change's tool — that is the preview
 
-The change has its own capability: each platform and each action has its own propose door,
-and a new entity has its own create door. Describe the one you found for the workspace the
-person means, and read `write_protocol` off that answer before anything else.
-
-> Run: contract_ref and workspace at the top level, the target's own arguments inside inputs.
-
-> skill_catalog lists methods, procedures and doctrine; skill_read one before building an analysis or change by hand
-
-The routing map below lists the change procedures. `skill_read` the one that fits before
-proposing; `safe_actions_usage_v1` and `action_handshake_v1` are the guides for the steps
-every write shares. The id of the thing to change comes from a read made on this connection
-or from the person, never from a guess.
-
-### 2. Propose — `write_protocol` decides what that does
-
-> Write: action_propose per write_protocol.
-
-> two_step returns a preview and confirm_token, and only action_confirm executes it.
-
-> preview_default previews until you propose again with its own apply argument set.
-
-> single_call executes on propose, so check what it spends first.
-
-A `two_step` or `preview_default` propose changes nothing on the platform; the second step
-is the change. A `single_call` propose is the change itself and returns no preview, so tell
-the person what the call will do before you make it, and make it only once they say yes.
+The answer is a preview of the item, its current value and the proposed one, the safety
+check's result, a `request_id` and a one-time `confirm_token`. Nothing on the platform has
+changed yet.
 
 ### 3. Show the preview; the person decides
 
-> Decide with the user, never for them: show the preview or approval request; action_decide records their approve, reject or cancel.
-
-Show what will change — the entity, its current value and the proposed one — and the
-safety check the preview reports, in one or two lines the person can say yes or no to.
-
 > Say it in product words: no ids, tool or field names or status codes unless asked; quote the person's own names as given.
 
+Show what will change in one or two lines the person can say yes or no to, then stop and
+wait for their answer. A request to change something is not approval of the preview it
+produces, and "do it without showing me" does not waive the preview: show it and ask.
+
+> action_decide records their approve, reject or cancel
+
 Some workspaces require a recorded approval before a change can run. Record it with
-`action_decide` only when the person has given it; an approval does not execute anything,
-and the confirm in step 4 still follows. When a second person is required, the one who
-proposed cannot approve it: name the role the request is waiting on, never a person.
+`action_decide` only when the person has given it; an approval does not execute anything.
+When the person says no, do not confirm; cancelling the request with `action_decide` is
+allowed.
 
 ### 4. Execute only what the person approved
 
-Call `action_confirm` with the `request_id` and `confirm_token` exactly as the propose
-returned them, and with the same workspace. It takes no other payload, so what runs is the
-proposal the person saw. The token expires about 15 minutes after the propose and is bound
-to that one proposal; a different value is a new proposal and a new yes. If it expired,
-`skill_read` `action_handshake_v1` for whether to reissue it or propose again — never send
-a dead token twice.
+> action_confirm runs what the person approved
+
+After the person's explicit yes, call `action_confirm` with the `request_id` and
+`confirm_token` exactly as the preview returned them. It takes no other payload, so what
+runs is the proposal the person saw. The token expires about 15 minutes after the preview
+and is bound to that one proposal; a different value is a new preview and a new yes.
 
 ### 5. Report the outcome from the request's status
 
-The confirm starts the change; it does not report whether the platform took it. Describe
-`platform_actions.status_read`, run it with `run_read` on the `request_id`, and tell the
-person what that answer says. Part of a change can land while part does not; report which.
+The confirm starts the change; it does not report whether the platform took it. Call
+`platform_actions_status` with the `request_id` and tell the person what it says. Part of a
+change can land while part does not; report which.
 
-### 6. Undo is a new proposal
+### Reversing a change
 
-`platform_actions.revert`, opened through `action_propose` with the `request_id` of a
-change that succeeded, previews the undo. It is a change like any other: steps 3 to 5 apply
-to it unchanged, it faces the same safety checks, and nothing is undone until the person
-approves it and it is confirmed. Not every change can be undone; the revert's own answer
-says when one cannot.
+There is no undo tool here. Reversing a change is a new change — the old value proposed back
+through the same tool — and it goes through the same preview and approval.
 
 ## Changes already waiting
 
-> If pending_actions is listed, call it at session start.
-
-It lists the requests waiting on an approval or on a confirm, with what each would change.
-Put them to the person; approve, reject or cancel one only on their word.
-
-## When a step is refused
-
-> follow error.details.next_call exactly;
-
-A safety check that refuses a change is reported to the person with what stopped it — for
-example, a budget step larger than one change may take. A smaller change is a new proposal
-they approve, not a way around the check.
+`pending_actions` lists the requests waiting on an approval or a confirm, with what each
+would change. Put them to the person; approve, reject or cancel one only on their word.
 
 ## Routing map
 
@@ -174,10 +150,8 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 
 ## What this file deliberately does not carry
 
-- **No procedures.** Each change's steps, ids and limits are `skill_read` entries and
-  update server-side.
-- **No schemas.** `capability_describe` is the only source for a write's arguments and its
-  `write_protocol`.
-- **No eligibility.** Which changes this connection may make is decided per connection and
-  per workspace, never here.
+- **No procedures.** Each change's steps and limits are `skill_read` entries.
+- **No schemas.** Each change tool publishes its own arguments.
+- **No eligibility.** Which changes a connection may make is decided per connection and
+  workspace.
 - **No approval on anyone's behalf.** Every yes in this flow is the person's.

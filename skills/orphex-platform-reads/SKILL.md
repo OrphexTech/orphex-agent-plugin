@@ -7,10 +7,9 @@ description: >-
   App Store Connect, Google Play, Merchant Center, Search Console, Google Tag Manager,
   Singular, Klaviyo, Shopify, IKAS, Ticimax and T-Soft. Use it when the answer has to be
   what the platform says right now — current accounts and their settings, live entity
-  status, fresh performance, recent changes, provider recommendations — rather than
-  Orphex's stored analytics, and use the analyst skill for the method that surrounds the
-  call. Each provider's guide states the tools it serves, the metric and dimension
-  vocabulary it publishes, and the shapes it refuses; this file names which one to open.
+  status, fresh performance, recent changes — and use the analyst skill for the method
+  that surrounds the call. Each provider's guide states the metric and dimension
+  vocabulary it publishes and the shapes it refuses; this file names which one to open.
 ---
 
 # Orphex platform reads
@@ -19,46 +18,42 @@ description: >-
 
 A question that names a platform, or that only the platform can answer: what an account is
 configured to do today, which campaigns exist and what state they are in, what a number
-looks like before the warehouse has it, what changed recently, what the provider itself is
-recommending. The `orphex-analyst` skill carries the method around every call — finding a
-capability, naming the workspace, reading the vocabulary first, the window, the evidence
-loop and the arithmetic — and none of it is repeated here. This file answers one question:
-**which prepared guide documents this platform's reads.**
+looks like right now, what changed recently. The `orphex-analyst` skill carries the method
+around every call and none of it is repeated here. This file answers one question: **which
+prepared guide documents this platform's reads.**
 
-## Stored and live are two different answers
+## One set of tools, every provider
 
-Orphex holds an ingested warehouse and it reaches the platforms directly, and the two are
-not interchangeable. The stored side is wider across time and normalized across providers;
-the live side is current and carries each provider's own full vocabulary, including names
-the warehouse never models. Neither is a fallback for the other, and a figure taken from
-one is not comparable to a figure taken from the other without saying so.
+> Each tool is one operation with its own input schema.
 
-A stored amount is in the workspace's reporting currency; a live provider read is in the ad account's own.
+The live reads are the same tools for every provider — `platform_management_accounts_read`,
+`platform_management_entities_read`, `platform_management_configuration_read`,
+`platform_management_performance_read`, `platform_management_changes_read` and
+`platform_management_reporting_vocabulary_read` — with the provider as an argument. What
+differs per provider is the vocabulary, the levels it reads at and the shapes it refuses,
+and that is what its guide carries.
 
-> skill_read one before building an analysis or change by hand, or stating how a number is computed, attributed or denominated.
+Stored and live are two different answers. A figure from the platform is current and in the
+ad account's own currency; a figure Orphex has stored is normalized across providers. Do not
+compare one with the other without saying so.
 
-When a stored read comes back empty, that is a routing signal rather than a finding: read
-the source-routing doctrine entry before reporting an absence as a fact about the account.
+> skill_read a skill_catalog entry before stating how a number is computed, attributed or denominated.
 
-## Open the guide before the flow
+## Open the guide before the call
 
-> capability_describe(id, workspace ws-N) returns input schema, requirements, write_protocol, guides and data.contract_ref.
+The routing map below is pre-knowledge for choosing among the guides without a round-trip.
+It is not the authority: eligibility is decided per workspace and the library moves without
+this package moving, so `skill_catalog` is what exists and `skill_read` is what it says.
+**Always `skill_read` the live entry before following its flow.** A guide this workspace is
+not eligible for is withheld whole, which is the connection speaking and not an error to
+work around. Where a guide names a step no listed tool performs, say so rather than
+guessing.
 
-The routing map below is pre-knowledge for choosing among them without a round-trip. It is
-not the authority: eligibility is decided per workspace and the corpus moves without this
-package moving, so `skill_catalog` is what exists and `skill_read` is what it says. **Always
-`skill_read` the live entry before executing its flow.** A guide this workspace is not
-eligible for is withheld whole, which is the connection speaking and not an error to work
-around.
-
-Two things are worth knowing before you pick a row. The **shared** entries, the
-`platform_management_reads` rows, carry what is true of every provider — the refs,
-coverage and paging discipline, and the account and entity walk — and a provider's own
-entry carries only what is different about it, so a platform-named question is answered
-from the provider's entry with the shared rules already in hand. And a busy provider is
-**more than one entry**: its halves divide on the question a reader arrives with — what an
-account is set to, what it did, what changed, how the numbers break down — so pick the half
-that matches the question rather than the first row whose name matches the platform.
+The **shared** entries, the `platform_management_reads` rows, carry what is true of every
+provider — refs, coverage, paging and the account and entity walk — and a provider's own
+entry carries only what is different about it. A busy provider is **more than one entry**:
+its halves divide on the question a reader arrives with — what an account is set to, what it
+did, what changed, how the numbers break down — so pick the half that matches the question.
 
 ## Routing map
 
@@ -136,12 +131,9 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 
 ## What this file deliberately does not carry
 
-- **No flows.** The stepwise bodies live in `skill_read` and update server-side.
-- **No vocabulary.** Which metrics and dimensions a provider publishes is the provider's
-  own guide, and below that the live read's own answer.
-- **No eligibility.** Which platforms a workspace has connected is decided per connection,
-  never here; a platform absent from a catalog is not a platform Orphex cannot read.
-- **No method.** Capability discovery, workspace addressing, windows and aggregation are
-  `orphex-analyst`.
-- **No write discipline.** This is the read side; proposing and confirming a change is a
-  separate surface with its own rules.
+- **No flows.** The stepwise bodies live in `skill_read`.
+- **No vocabulary.** Which metrics and dimensions a provider publishes is its own guide and
+  `platform_management_reporting_vocabulary_read`.
+- **No eligibility.** Which platforms a workspace has connected is decided per connection.
+- **No method.** Workspaces, windows and aggregation are `orphex-analyst`.
+- **No write discipline.** Making a change is `orphex-actions`.

@@ -1,13 +1,13 @@
 ---
 name: orphex-analyst
 description: >-
-  Answer questions about advertising performance over an Orphex MCP connection — spend,
-  ROAS, conversions, pacing, anomalies, cross-platform comparisons — for Google, Meta,
-  TikTok, Shopify and the rest of the connected platforms. Use it whenever the Orphex
-  connection is available and the question is about what the numbers are, why they moved,
-  or what to do about it. It carries the method: how to find a capability before calling
-  it, how to address a workspace, why the metric vocabulary is discovered rather than
-  guessed, the date window the surface enforces, how evidence is gathered and cross-checked,
+  Answer questions about advertising performance over the Orphex connection in ChatGPT —
+  spend, ROAS, conversions, pacing, anomalies, cross-platform comparisons — for Google,
+  Meta, TikTok, Shopify and the rest of the connected platforms. Use it whenever the
+  Orphex connection is available and the question is about what the numbers are, why they
+  moved, or what to do about it. It carries the method: which Orphex tool answers which
+  question, how to address a workspace, why the metric vocabulary is read rather than
+  guessed, the date window the tools enforce, how evidence is gathered and cross-checked,
   and the aggregation doctrine that keeps a period figure correct. It carries no data, no
   schemas and no flows — those stay live on the server and are always the authority.
 ---
@@ -17,165 +17,124 @@ description: >-
 ## When this applies
 
 Any question a person asks about their advertising — what a number is, why it moved, which
-platform or campaign is responsible, what to change — where an Orphex MCP connection is
+platform or campaign is responsible, what to change — where the Orphex connection is
 available. This file is *method*. The connection itself is the authority on what exists,
 what this workspace may reach and what any of it means.
 
-## The surface: a fixed tool set over a much larger capability set
+## The tools
 
-The connection publishes a small, fixed set of verbs. It does **not** publish one tool per
-report, platform or metric. Everything analytical is a **capability id** behind those verbs,
-found and run through the loop below. A session that never searches sees a handful of verbs
-and no data surface at all.
+> Each tool is one operation with its own input schema.
 
-## 1. Find the capability, then call it
+Every Orphex tool does one thing and publishes its own arguments. Pick the tool by the
+question, and fill its arguments from its own schema and field descriptions; nothing has to
+be looked up first.
 
-> capability_search, first with no arguments for an overview, then narrowed.
+- **Ad platform numbers:** `platform_management_performance_read` for a report that fits in
+  one answer. A large one runs as a job: `platform_management_report_start`, then
+  `platform_management_report_status` until it is ready.
+- **What a provider reports on:** `platform_management_reporting_vocabulary_read` lists the
+  metric and dimension names one provider publishes.
+- **Accounts and entities:** `platform_management_accounts_read`,
+  `platform_management_entities_read`, `platform_actions_ad_accounts_read` and
+  `platform_actions_entities_read` list what is connected and what it contains.
+- **One entity in full:** `campaign_detail_read`, `ad_set_detail_read`, `ad_detail_read`,
+  `ad_creative_detail_read`, `ad_video_detail_read`, `platform_actions_ad_set_config_read`,
+  `platform_actions_ad_texts_read`, `platform_actions_account_assets_read` and
+  `platform_management_configuration_read`.
+- **What changed:** `platform_management_changes_read`.
+- **Analytics and subscriptions:** `google_analytics_report_read`; `revenuecat_chart`, after
+  `revenuecat_chart_options` for what a chart can be split and filtered by.
 
-Start with `capability_search` and no arguments: the answer is an overview of what this
-connection reaches, counted by family and by platform. Narrow from there with `family`,
-`platform`, `entity_level` or `action_kind`, or with `q` to match words against ids and
-summaries. Run a read-class id with `run_read`, passing the capability's own arguments in
-`inputs`, shaped exactly as `capability_describe` returned them.
+A question none of these answers is not a reason to improvise one from another tool: say
+what is missing, and offer `capability_feature_request` once the person agrees.
 
-Describe the selected read for its target workspace before executing it. Echo the describe
-response's `data.contract_ref` at the top level of `run_read`; keep target arguments inside
-`inputs`. Reuse a reference for the same workspace and current call contract. A refusal's
-`error.details.next_call` names the exact recovery call; follow it and preserve field-specific
-guidance. A receipt proves contract delivery, not authorization or semantic correctness.
+## 1. Name the workspace
 
-> Use only ids it returns; an id you cannot use is refused like one that does not exist.
+> Several: the person picks one, not you.
 
-A capability this connection cannot use is refused exactly as one that does not exist —
-there is a single "not visible" answer for both. A refusal is therefore never evidence that
-something exists somewhere else, and never a reason to retry the same guess.
+Every answer belongs to exactly one workspace. On first contact call `get_workspaces`; when
+the connection is bound to more than one, ask which one the question is about and pass that
+workspace on every call. `workspace_config` says what that workspace has connected and
+whether each connection is healthy, which stops the first read from being a guess.
 
-## 2. Name the workspace
+What is open differs per workspace. Never carry an id, a metric name or a conclusion from
+one workspace to another.
 
-> Run: contract_ref and workspace at the top level, the target's own arguments inside inputs.
+## 2. Vocabulary before numbers
 
-Every answer belongs to exactly one workspace. A connection bound to several has a default
-one, and `capability_search` / `capability_describe` fall back to it — but `run_read` does
-not: name the workspace on every call once more than one is bound, or the answer is silently
-about the wrong account.
+Metric and dimension names are specific to the provider and the level being read; they are
+not guessable from another platform's naming. Read
+`platform_management_reporting_vocabulary_read` for the provider, or the field descriptions
+of the tool itself, and ask only for names they publish.
 
-On first contact, before any metric call:
+## 3. The date window
 
-- `run_read` on `workspaces.list` to see what this connection is bound to — describe it
-  first and echo its `data.contract_ref`.
-- `capability_search` with no arguments, for the workspace the answer is about. Its overview
-  by family and platform says which platforms are connected and which reads this workspace
-  opens — which is what stops the first read from being a guess.
+Ask for complete days. Today is not complete, so a figure "including today" is a figure for
+a day still moving: report through yesterday and say so. A plan with limited reporting
+history can narrow an older window. Whatever a result says it adjusted — the window, a
+dropped comparison — goes into the answer, because the period asked for and the period the
+data covers are different facts. When a result says when its data was produced, carry that
+whenever freshness could change the reader's decision.
 
-What is open differs per workspace. Never carry an id, a metric name or an eligibility
-conclusion from one workspace to another.
+## 4. The evidence loop
 
-## 3. Vocabulary before numbers
+Work in a loop rather than one large query: start broad, drill one step at a time, and let
+each result decide the next.
 
-`capability_describe` before `run_read`, always. Metric and dimension names are specific to
-the workspace, the platform and the data level being asked about; they are not a fixed
-vocabulary and they are not guessable from another platform's naming. Read what the describe
-response and the read's own guide publish for the level you intend to read, then ask only for
-the names they published.
+1. **Fetch small and targeted.** A narrow read that answers one question beats a wide one
+   whose rows still have to be interpreted.
+2. **Drill one step at a time:** workspace → platform → campaign → below, never all four at
+   once.
+3. **Cross-check before concluding.** Where two reads cover the same figure — an ad platform
+   and the analytics property, or two levels of the same account — compare them, and read
+   the change history for what moved it.
+4. **Report contradictions instead of forcing a story.** Say which read is closer to the
+   source.
+5. **Stop when the evidence answers the question.**
 
-The same rule holds one level up: ask `capability_search` what reads exist before assembling
-an answer from a general performance read. Many questions have a purpose-built capability
-that answers better than a hand-assembled one.
+Never present a number that did not come from a call made in this conversation. No
+estimate, no carried-over figure from an earlier session, no placeholder.
 
-## 4. The date window
+## 5. Aggregation doctrine
 
-`date_start` / `date_end` are inclusive `YYYY-MM-DD` and **cannot run past yesterday**. Today
-is not a complete day, so the surface will not report it: a later `date_end` is normalized
-down rather than refused. A plan with limited reporting history raises older dates to its
-window and drops an out-of-window comparison the same way.
+- **Additive metrics sum.** Spend, impressions, clicks, conversions, revenue.
+- **Calculated metrics are Σ ÷ Σ.** ROAS, CPC, CPA, CTR, CVR and every other ratio are
+  computed over the period as sum of numerator ÷ sum of denominator.
+- **Never average a ratio.** The mean of per-campaign CPCs is not the account CPC — it weights
+  a €10 campaign the same as a €10,000 one.
+- **Prefer the tool's own aggregate.** Ask for the period you want rather than fetching
+  daily rows and recomputing.
+- **Never sum money across currencies.** Report amounts in different currencies apart.
 
-Every one of those adjustments is reported back in `request_adjustments`. **Read that field
-on every result and disclose what it says.** A period the caller asked for and a period the
-data covers are different facts, and a report that silently prints the requested one is
-wrong. Results may also be served from cache; `as_of` is when the returned data was produced,
-and it belongs in the answer whenever freshness could change the reader's decision.
+> skill_read a skill_catalog entry before stating how a number is computed, attributed or denominated.
 
-## 5. The evidence loop
+Before stating how Orphex computes, denominates or attributes a number, call
+`skill_catalog` with kind `guide` and `skill_read` the rows whose topic is `doctrine`. They
+are the authority on this arithmetic.
 
-Work in a loop rather than one large query: start broad, drill one step at a time, and let each result decide the next.
+## 6. Answer shape
 
-1. **Discover the vocabulary** — describe first, so the read asks for names that exist.
-2. **Fetch small and targeted.** A narrow, well-scoped read that answers one question beats a
-   wide one whose rows still have to be interpreted.
-3. **Drill one step at a time.** Let each result choose the next call: workspace → platform →
-   campaign → below, never all four at once.
-4. **Cross-check before concluding.** Describe each id and echo its `data.contract_ref`.
-   Where two reads cover the same figure — an ad platform and the analytics property, or two
-   levels of the same account — compare them, and read the account's change history for what
-   moved it. A driver the numbers suggest that no change explains, and a change that left no
-   trace in the numbers, are both worth a sentence.
-5. **Report contradictions instead of forcing a story.** When two reads disagree, say so and
-   say which is closer to the source. A confident wrong narrative costs more than an honest
-   open question.
-6. **Stop when the evidence answers the question.** More calls after that add cost, not
-   confidence.
+> Answer with a one-line headline, drivers each backed by a fetched number.
 
-Never present a number that did not come from a call made in this conversation. No estimate,
-no carried-over figure from an earlier session, no placeholder.
+> Say it in product words: no ids, tool or field names or status codes unless asked; quote the person's own names as given.
 
-## 6. Aggregation doctrine
-
-This is the rule most often broken, and the one that produces a confidently wrong number.
-
-- **Additive metrics sum.** Spend, impressions, clicks, conversions, revenue: a period figure
-  is the sum of its days, and a parent's figure is the sum over its children.
-- **Calculated metrics are Σ ÷ Σ.** ROAS, CPC, CPA, CTR, CVR, ROI and every other ratio are
-  computed over the period as *sum of numerator ÷ sum of denominator*.
-- **Never average a ratio.** The mean of daily ROAS values, or of per-campaign CPCs, is not
-  the period's ROAS or CPC — it weights a €10 day the same as a €10,000 one. This is true
-  across days and across rows alike, and it is wrong in both directions, so it cannot be
-  waved away as a rounding difference.
-- **Prefer the read's own aggregate.** Ask the read for the period you want and report what
-  it returns, rather than fetching daily rows and recomputing. Re-deriving a figure the
-  source already computed is where a rule mismatch enters.
-- **Never sum money across currencies.** A set of amounts in more than one currency is not a
-  total; report them apart, or ask for the workspace's own reporting figure.
-
-> skill_read one before building an analysis or change by hand, or stating how a number is computed, attributed or denominated.
-
-A stored amount is in the workspace's reporting currency; a live provider read is in the ad account's own.
-
-Before stating how Orphex computes, denominates, refreshes or attributes a number, read the
-doctrine entries: `skill_catalog` with kind `guide`, then `skill_read` on the rows whose topic
-is `doctrine`. They are the authority on this arithmetic; the paragraph above is the habit
-that stops the wrong answer from being given before they are read.
-
-## 7. Answer shape
-
-> Answer with a one-line headline, then drivers each backed by a fetched number, then recommended actions.
-
-Three well-evidenced drivers beat ten half-checked ones. Attach the window and, when it
-matters, the `as_of`. Say what the evidence did not settle rather than rounding it away.
+Three well-evidenced drivers beat ten half-checked ones. Attach the window, and say what the
+evidence did not settle rather than rounding it away. A finding is a recommendation to put
+to the person, never a change to make on their behalf.
 
 ## Prepared methods come first
 
-> skill_catalog lists methods, procedures and doctrine; skill_read one before building an analysis or change by hand
-
-`skill_catalog` and `skill_read` are called directly — they are the door onto the prepared
-methods and they do not go through the discovery loop. The routing map below is
-pre-knowledge for choosing among them without a round-trip; the server is the authority when
-they disagree, because eligibility is per workspace and the corpus changes without this
-package changing. **Always `skill_read` the live entry before executing its flow** — the flows
-themselves are never shipped here, so this file can go out of date about what exists but can
-never assert a stale procedure.
-
-The analyses asked for most are Knowledge Library guides that the routing map below does not
-list: investigating an anomaly, reallocating budget, comparing platforms, search-term hygiene
-and brand incrementality. When a question has one of those shapes, call `skill_catalog` with `kind`
-`guide` and `skill_read` the row whose phrases match it before building the analysis by hand.
-Their ids and titles can change without this package changing, so find them by intent; never
-reuse an id from memory. A family missing from the list is not available to this workspace;
-work that question with the evidence loop above instead.
+The analyses asked for most — investigating an anomaly, reallocating budget, comparing
+platforms, search-term hygiene — are Knowledge Library guides. When a question has one of
+those shapes, call `skill_catalog` with kind `guide` and `skill_read` the row whose phrases
+match it before building the analysis by hand. Their ids can change without this package
+changing, so find them by intent. **Always `skill_read` the live entry before following its
+flow.** Where a guide names a step no listed tool performs, say so rather than guessing.
 
 ## Routing map
 
-This map lists only the entries that ship with Orphex's code. The method guides above are not
-in it; `skill_catalog` is the only way to reach them.
+This map lists only the entries that ship with Orphex's code; `skill_catalog` is the only
+way to reach the rest.
 
 <!-- generated: routing -->
 
@@ -212,9 +171,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 ## What this file deliberately does not carry
 
 - **No flows.** The stepwise bodies live in `skill_read` and update server-side.
-- **No schemas.** `capability_describe` is the only source for a capability's arguments.
-- **No eligibility.** What a workspace may reach is decided per connection and per workspace,
-  never here.
-- **No data, no ids, no tenant names.** Nothing in this file is a fact about an account.
-- **No write discipline.** This is the read method; proposing and confirming a change is a
-  separate surface with its own rules.
+- **No schemas.** Each tool publishes its own arguments.
+- **No eligibility.** What a workspace may reach is decided per connection and workspace.
+- **No data, no ids, no tenant names.**
+- **No write discipline.** Making a change is `orphex-actions`.
