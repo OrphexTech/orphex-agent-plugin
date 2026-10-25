@@ -144,6 +144,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 
 - `action_recovery_v1` — değişikliği geri al; list requests awaiting approval
 - `akinon_campaign_write_v1` — Akinon kampanyası oluştur; generate akinon voucher codes
+- `akinon_catalog_write_v1` — Akinon fiyat güncelle; set akinon stock
 - `alerts_config_write_v1` — alert kur; pause an alert
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
