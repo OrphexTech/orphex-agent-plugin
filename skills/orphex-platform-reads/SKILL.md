@@ -106,20 +106,24 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_pinterest_v1` — pinterest; pinterest haftalık performans
 - `platform_reads_playstore_structure_v1` — Play Store uygulama listesi; play console crash groups
 - `platform_reads_playstore_v1` — google play okuması; play store data freshness
+- `platform_reads_reddit_structure_v1` — Reddit Ads hesaplarını listele; reddit ad group bid strategy
+- `platform_reads_reddit_v1` — Reddit Ads performans; reddit ads change history
 - `platform_reads_search_console_v1` — search console; which pages rank
 - `platform_reads_shopify_activity_v1` — Shopify satışları; Shopify metrikleri
 - `platform_reads_shopify_v1` — shopify; list Shopify segments
 - `platform_reads_singular_activity_v1` — Singular install sayısı; singular data freshness
 - `platform_reads_singular_segments_v1` — Singular kırılımları; singular filter by app
 - `platform_reads_singular_v1` — singular; singular tracking links
+- `platform_reads_snapchat_changes_v1` — Snapchat değişiklik geçmişi; what changed on my snapchat campaign
+- `platform_reads_snapchat_structure_v1` — Snapchat organizasyon; snapchat custom conversions
 - `platform_reads_snapchat_v1` — snapchat performans; snapchat ad account list
 - `platform_reads_tag_manager_v1` — GTM container denetimi; is the GA4 tag installed in GTM
 - `platform_reads_ticimax_v1` — ticimax siparişlerim; ticimax orders
 - `platform_reads_tiktok_activity_v1` — TikTok performans oku; tiktok view-through conversions
 - `platform_reads_tiktok_segments_v1` — TikTok ülke kırılımı; tiktok hourly breakdown
 - `platform_reads_tiktok_v1` — tiktok; tiktok business center hierarchy
-- `platform_reads_tsoft_v1` — t-soft storefront; t-soft ürün fiyat
-- `platform_reads_twitter_conversions_v1` — X Ads dönüşüm sayısı; x ads conversion attribution basis
+- `platform_reads_tsoft_v1` — t-soft storefront; t-soft iptal iade
+- `platform_reads_twitter_conversions_v1` — X Ads dönüşüm sayısı; x ads web event tags
 - `platform_reads_twitter_structure_v1` — X Ads hesaplarını listele; which currency is this x ads campaign in
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
 - `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
