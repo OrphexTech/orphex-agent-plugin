@@ -88,7 +88,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_studies_v1` — Google deneyi anlamlı mı; did my ads lift awareness
 - `platform_reads_google_travel_v1` — Google otel sınıfına göre performans; hotel performance by city
 - `platform_reads_google_v1` — google ads; ad approval status google
-- `platform_reads_ikas_v1` — ikas; ikas product catalogue
+- `platform_reads_ikas_v1` — ikas; ikas siparişleri
 - `platform_reads_klaviyo_v1` — klaviyo campaigns; klaviyo kampanyaları
 - `platform_reads_linkedin_activity_v1` — linkedin spend; linkedin ad level report
 - `platform_reads_linkedin_v1` — linkedin; linkedin reklamı neden reddedildi
@@ -114,7 +114,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_singular_activity_v1` — Singular install sayısı; singular data freshness
 - `platform_reads_singular_segments_v1` — Singular kırılımları; singular filter by app
 - `platform_reads_singular_v1` — singular; singular tracking links
-- `platform_reads_snapchat_changes_v1` — Snapchat değişiklik geçmişi; what changed on my snapchat campaign
+- `platform_reads_snapchat_changes_v1` — Snapchat değişiklik geçmişi; snapchat budget before and after
 - `platform_reads_snapchat_structure_v1` — Snapchat organizasyon; snapchat custom conversions
 - `platform_reads_snapchat_v1` — snapchat performans; snapchat ad account list
 - `platform_reads_taboola_v1` — taboola reklamları; taboola top campaign content
