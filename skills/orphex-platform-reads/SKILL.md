@@ -75,6 +75,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_appsflyer_v1` — appsflyer; what changed in appsflyer
 - `platform_reads_criteo_structure_v1` — Criteo reklamveren listesi; criteo entity settings
 - `platform_reads_criteo_v1` — criteo performans; criteo report
+- `platform_reads_dengage_v1` — dengage sends; dengage segmentleri
 - `platform_reads_emarsys_v1` — emarsys campaigns; emarsys segmentleri
 - `platform_reads_google_activity_v1` — Google performans oku; which keyword match type performed
 - `platform_reads_google_analytics_activity_v1` — analytics oturum verisi; is traffic coming in right now
