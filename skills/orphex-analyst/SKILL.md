@@ -161,6 +161,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
 - `read_guidance_v1` — bir sonraki adımı öner; next step after this report
 - `roas_drop_diagnosis_v1` — ROAS düştü; how do I diagnose a ROAS drop
+- `routines_runner_v1` — rutinlerimi çalıştır; what routines are due now
 - `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
 - `subscription_economics_v1` — abonelik geliri; subscription retention
 
