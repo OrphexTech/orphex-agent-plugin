@@ -42,13 +42,16 @@ refreshes its own sign-in.
 
 ## What it reads
 
-By default it listens to `action.approval_requested`, `action.confirm_requested`,
-`action.approval_granted`, `action.expiring`, `action.settled`, `ad.disapproved`,
-`budget.constrained`, `connection.access_lost` and `report.finished`, in your connection's
-default workspace. To change either, set these before starting Claude Code:
+Orphex publishes events in families, and one family brings every kind of event in it. By
+default it listens to `action.updated` (change requests waiting for approval or confirm,
+about to expire or settled), `issue.detected` (ads disapproved, spend running into a cap,
+connected accounts that lost access) and `job.finished` (reports and other long jobs that
+finished), in your connection's default workspace. Each event names its kind as `type`. To
+change either, set these before starting Claude Code:
 
 - `ORPHEX_WORKSPACES`: comma-separated workspace references, for example `ws-123,ws-456`.
-- `ORPHEX_EVENTS`: comma-separated event names.
+- `ORPHEX_EVENTS`: comma-separated families: `action.updated`, `issue.detected`,
+  `job.finished`, `signal.detected`, `admin.notice`.
 
 An event your role cannot read in a workspace is skipped. Events that happened while Claude
 Code was closed are read when it starts again, up to a day back; if some were not kept, the
