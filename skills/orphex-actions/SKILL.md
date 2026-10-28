@@ -148,6 +148,15 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `alerts_config_write_v1` — alert kur; pause an alert
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
+- `dengage_audience_send_v1` — dengage push kampanyası gönder; trigger a dengage automated flow
+- `dengage_commerce_record_write_v1` — dengage ürün kayıtlarını güncelle; delete a dengage order
+- `dengage_contact_write_v1` — dengage kişileri toplu güncelle; write iys permissions to dengage contacts
+- `dengage_content_write_v1` — dengage e-posta içeriği oluştur; edit a dengage onsite content
+- `dengage_dataspace_delete_v1` — dengage tablodan satır sil; delete dengage dataspace rows from a csv file
+- `dengage_dataspace_write_v1` — dengage veri tablosu oluştur; bulk load a csv file into dengage
+- `dengage_erasure_request_v1` — dengage GDPR silme talebi aç; dengage opendsr erasure
+- `dengage_folder_coupon_write_v1` — dengage klasör oluştur; import coupon codes into a dengage coupon list
+- `dengage_transactional_send_v1` — dengage işlemsel e-posta gönder; send a dengage message with fallback
 - `emarsys_campaign_draft_write_v1` — Emarsys e-posta kampanyası oluştur; stop an emarsys campaign
 - `emarsys_product_catalog_write_v1` — Emarsys ürün kataloğuna ürün yükle; update emarsys product prices or availability
 - `emarsys_segment_create_v1` — Emarsys segmenti oluştur; build an emarsys segment from contact criteria
