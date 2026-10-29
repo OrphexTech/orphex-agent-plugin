@@ -144,6 +144,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `insider_catalog_write_v1` — Insider kataloğuna ürün yükle; add a locale to the insider catalog
 - `media_upload_v1` — video yükle; add a creative asset
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
+- `routine_authoring_v1` — özel rutin yaz; archive a custom routine
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board
 - `sheets_export_v1` — sheets'e aktar; write this table to a google sheet
 - `shopify_storefront_tags_v1` — Shopify mağazama GTM kur; set the Shopify storefront tags

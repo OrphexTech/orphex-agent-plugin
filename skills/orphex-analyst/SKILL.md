@@ -161,6 +161,10 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
 - `read_guidance_v1` — bir sonraki adımı öner; next step after this report
 - `roas_drop_diagnosis_v1` — ROAS düştü; how do I diagnose a ROAS drop
+- `routine_budget_ceiling_check_v1` — bütçe sınırı rutini; google account budget running out check
+- `routine_disapproved_ads_check_v1` — reddedilen reklam rutini; scheduled check for rejected ads
+- `routine_external_change_check_v1` — platform dışı değişiklik rutini; daily change history check
+- `routine_scorecard_off_track_check_v1` — scorecard hedef rutini; check my kpi targets every week
 - `routines_runner_v1` — rutinlerimi çalıştır; what routines are due now
 - `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
 - `subscription_economics_v1` — abonelik geliri; subscription retention
