@@ -140,6 +140,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `emarsys_segment_delete_v1` — Emarsys segmentini sil; remove an emarsys segment
 - `entity_create_v1` — yeni kampanya aç; tiktok smart plus
 - `google_analytics_channel_groups_write_v1` — GA4 channel group oluştur; GA4 channel classification
+- `google_analytics_property_settings_write_v1` — GA4 attribution ayarlarını değiştir; change GA4 reporting identity
 - `google_analytics_property_write_v1` — GA4 custom dimension oluştur; create a GA4 custom dimension
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results
 - `insider_catalog_write_v1` — Insider kataloğuna ürün yükle; add a locale to the insider catalog
