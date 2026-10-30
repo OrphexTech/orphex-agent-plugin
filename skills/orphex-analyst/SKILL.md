@@ -186,6 +186,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
 - `change_history_read_v1` — ne değişti; who paused my campaign
 - `creative_fatigue_diagnosis_v1` — kreatif yorgunluğu; creative fatigue
+- `ga4_ads_audience_health_v1` — GA4 kitleleri Google Ads'te 0 görünüyor; remarketing list is empty
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
 - `native_pacing_spend_review_v1` — native spend pacing review; native bütçe pacing incelemesi
