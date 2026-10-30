@@ -1,6 +1,6 @@
 {
   "name": "orphex-channel",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "description": "A Claude Code channel that pushes Orphex events into a running session: a change request waiting for approval or confirm, one about to expire or settled, an ad disapproved, spend running into a cap, a connected account that lost access, a report that finished. Read with the MCP Events extension's events/poll; one-way.",
   "author": {
     "name": "Orphex",
