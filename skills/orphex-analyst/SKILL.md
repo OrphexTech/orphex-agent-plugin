@@ -168,6 +168,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `routine_scorecard_off_track_check_v1` — scorecard hedef rutini; check my kpi targets every week
 - `routines_runner_v1` — rutinlerimi çalıştır; what routines are due now
 - `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
+- `subscription_customers_audiences_v1` — revenuecat müşteri ayrıntısı; revenuecat audience preview
 - `subscription_economics_v1` — abonelik geliri; subscription retention
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
