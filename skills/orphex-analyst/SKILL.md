@@ -214,6 +214,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `subscription_economics_v1` — abonelik geliri; subscription retention
 - `subscription_entitlement_products_v1` — revenuecat yetkiye ürün bağla; revenuecat entitlement product access
 - `subscription_experiments_targeting_v1` — revenuecat deney sonuçları; revenuecat native chart metadata
+- `subscription_packages_v1` — revenuecat paket ürünleri; revenuecat package eligibility criteria
 - `subscription_product_first_name_v1` — revenuecat ürüne ilk ad ver; revenuecat first name approval
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
