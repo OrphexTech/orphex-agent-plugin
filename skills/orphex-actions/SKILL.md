@@ -176,6 +176,11 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results
 - `insider_catalog_write_v1` — Insider kataloğuna ürün yükle; add a locale to the insider catalog
 - `media_upload_v1` — video yükle; add a creative asset
+- `meta_business_finance_write_v1` — Meta Business kredi hattı ve faturalarını oku; rename or delete a meta invoice group
+- `meta_business_people_access_v1` — Meta Business'a kişi davet et; meta business people and access
+- `meta_business_portfolio_assets_v1` — Meta Business portföyünü oku; read a Meta Business portfolio
+- `meta_catalog_feed_write_v1` — Meta katalog oluştur; manage a meta catalog and its feeds
+- `meta_pixel_signals_sharing_write_v1` — Meta pikselini oluştur veya paylaş; read meta business signals and sharing requests
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
 - `routine_authoring_v1` — özel rutin yaz; archive a custom routine
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board

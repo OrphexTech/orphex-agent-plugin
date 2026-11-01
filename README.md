@@ -41,6 +41,25 @@ is listed there, install it in Codex CLI by running `codex` and then `/plugins`,
 ChatGPT from the same directory. The OpenAI build of this plugin is on this repository's
 `openai` branch.
 
+**Cursor.** [Add Orphex to Cursor](https://cursor.com/link/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=)
+opens Cursor and offers to install the Orphex connection; the first call opens your browser
+on the Orphex sign-in page. The same link as a Cursor deeplink is
+`cursor://anysphere.cursor-deeplink/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=`.
+This repository is also laid out as a Cursor plugin, with its manifest in
+`.cursor-plugin/plugin.json`, so Cursor reads the four skills from it as well.
+
+**Gemini CLI.** Install this repository as a Gemini CLI extension, restart Gemini CLI, and
+sign in from inside it:
+
+```
+gemini extensions install https://github.com/OrphexTech/orphex-agent-plugin
+/mcp auth orphex
+```
+
+The extension names Orphex's public sign-in client itself, so your `settings.json` needs no
+edit. The browser opens on the Orphex sign-in page, and Gemini CLI receives the sign-in on a
+local port of your machine. The extension loads the four skills too.
+
 ## What the plugin contains
 
 - Four skills, written as plain Markdown instructions:
