@@ -206,6 +206,8 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `routine_budget_ceiling_check_v1` — bütçe sınırı rutini; google account budget running out check
 - `routine_disapproved_ads_check_v1` — reddedilen reklam rutini; scheduled check for rejected ads
 - `routine_external_change_check_v1` — platform dışı değişiklik rutini; daily change history check
+- `routine_fired_alerts_triage_v1` — tetiklenen alarmlar rutini; which alerts fired since yesterday
+- `routine_impact_analysis_review_v1` — etki analizi rutini; did my impact analysis find an effect
 - `routine_peak_sale_campaign_readiness_v1` — black friday kampanya hazırlık rutini; peak sale campaign setup check
 - `routine_peak_sale_live_watch_v1` — black friday canlı izleme rutini; cyber monday live campaign watch
 - `routine_peak_sale_tracking_readiness_v1` — black friday ölçüm hazırlık rutini; peak sale measurement readiness check

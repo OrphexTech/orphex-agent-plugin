@@ -1,20 +1,85 @@
-# Orphex
+<div align="center">
 
-Orphex is an advertising-analytics platform. This plugin teaches Claude how to work
-with an Orphex connection: how to find the right capability before calling it, how to
-address a workspace, how to read the metric vocabulary before the numbers, and which
-prepared method answers a question about spend, ROAS, conversions, pacing or anomalies
-across the ad, analytics and commerce platforms a workspace has connected. It also
-carries the approval-first flow for making a change you ask for, such as a budget, a
-bid or a campaign's status: Claude shows you a preview, waits for your approval, and
-only then makes the change.
+<img src="https://raw.githubusercontent.com/OrphexTech/orphex-agent-plugin/main/.claude-plugin/icon.png" alt="Orphex logo" width="96">
 
-## Install
+# Orphex MCP
 
-You need an Orphex account with at least one workspace.
+**Ask your AI assistant about your ad accounts — spend, ROAS and campaigns across Google Ads,
+Meta, TikTok and 20+ more platforms — and make changes only after you approve them.**
 
-**Claude Code.** Add this repository as a plugin marketplace, then install the plugin
-from it:
+Remote MCP server and plugin for Claude, ChatGPT, Cursor, Gemini CLI and other AI assistants.
+
+</div>
+
+<div align="center">
+
+[![Claude](https://img.shields.io/badge/Claude-111111?style=for-the-badge)](#claude-code)
+[![ChatGPT / Codex](https://img.shields.io/badge/ChatGPT_%2F_Codex-111111?style=for-the-badge)](#codex-and-chatgpt)
+[![Cursor](https://img.shields.io/badge/Cursor-111111?style=for-the-badge)](https://cursor.com/link/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=)
+[![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-111111?style=for-the-badge)](#gemini-cli)
+[![Other MCP](https://img.shields.io/badge/Other_MCP-111111?style=for-the-badge)](#manual-mcp-setup)
+
+[![Latest release](https://img.shields.io/github/v/release/OrphexTech/orphex-agent-plugin?style=flat-square&label=release&color=F97316)](https://github.com/OrphexTech/orphex-agent-plugin/releases/latest)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-lightgrey?style=flat-square)](LICENSE)
+
+[Quick start](#quick-start) · [What you can do](#what-you-can-do) · [Manual setup](#manual-mcp-setup) · [Security](#security)
+
+</div>
+
+## Quick start
+
+You need an Orphex account with at least one workspace. Every client signs you in with that
+account on the Orphex sign-in page, in your browser; there is no API key to paste.
+
+| Client | Get started |
+| --- | --- |
+| **Claude Code** | Run `/plugin marketplace add OrphexTech/orphex-agent-plugin`, then `/plugin install orphex@orphex`. [Details](#claude-code) |
+| **Claude apps** | Connect Orphex in claude.ai or Claude Desktop with the [Claude setup steps](https://mcp.orphex.co/support). [Details](#claude-apps) |
+| **Cursor** | [Add Orphex to Cursor](https://cursor.com/link/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=) in one click, then sign in. [Details](#cursor) |
+| **Gemini CLI** | Run `gemini extensions install https://github.com/OrphexTech/orphex-agent-plugin`, then `/mcp auth orphex`. [Details](#gemini-cli) |
+| **Codex and ChatGPT** | Install from OpenAI's plugin directory once Orphex is listed there. [Details](#codex-and-chatgpt) |
+| **Other MCP clients** | Add the remote MCP URL and sign in. [Manual setup](#manual-mcp-setup) |
+
+Try this first:
+
+> Using Orphex, how did our spend and ROAS change last week compared with the week before,
+> platform by platform, and what drove the biggest change?
+
+## What you can do
+
+Ask in your own words; the plugin's skills pick the prepared method, report template or live
+read that fits the question.
+
+| Capability | Try asking |
+| --- | --- |
+| Performance analysis | "Why did our CPA on Google Ads go up last week compared with the week before?" |
+| Reports | "Build the monthly performance report for October, with an executive summary." |
+| Live platform reads | "Which of our Meta campaigns are active right now, and what budget is each one on?" |
+| Change history | "What changed in our Google Ads account this week, and who made each change?" |
+| Approval-first changes | "Pause the 'Black Friday Prospecting' campaign on Meta, and show me the preview before you apply it." |
+| Pacing and anomalies | "Are any campaigns pacing to overspend this month, or showing an unusual drop in conversions?" |
+
+**Platforms:** Google Ads, Meta, TikTok, LinkedIn, Pinterest, Snapchat, X Ads, Apple Ads,
+Google Analytics 4, Shopify, AppsFlyer, Adjust and more than a dozen other ad, analytics and
+commerce platforms. Which of them a workspace reaches depends on what it has connected in
+Orphex.
+
+## Manual MCP setup
+
+Orphex is a remote MCP server. In an MCP client that takes a server URL, add this one as a
+Streamable HTTP server and sign in with your Orphex account when the client asks:
+
+```text
+https://api.orphex.co/api/interaction-gateway/v1/mcp
+```
+
+Sign-in uses OAuth in your browser, never an API key. Orphex admits a known list of clients
+and does not accept dynamic client registration, so if your client cannot complete sign-in,
+write to [support@orphex.co](mailto:support@orphex.co).
+
+### Claude Code
+
+Add this repository as a plugin marketplace, then install the plugin from it:
 
 ```
 /plugin marketplace add OrphexTech/orphex-agent-plugin
@@ -25,31 +90,32 @@ The first Orphex call opens your browser on the Orphex sign-in page. Claude Code
 the sign-in on port 33418 of your machine, so that port has to be free while you sign
 in. To pick up a newer release later, run `/plugin marketplace update orphex`.
 
-**Orphex events in your Claude Code session (optional).** The same marketplace carries a
-second plugin, `orphex-channel`: a Claude Code channel that pushes what happens in your
+**Orphex events in your session (optional).** The same marketplace carries a second
+plugin, `orphex-channel`: a Claude Code channel that pushes what happens in your
 workspaces (a change waiting for your approval, an ad disapproved, a budget running out)
 into the session you have open. Install it with `/plugin install orphex-channel@orphex` and
 see `channel/README.md` for how to turn it on; it needs Node.js 20 or later.
 
-**Claude apps (claude.ai, Claude Desktop).** Connect Orphex by following the Claude setup
-steps at [https://mcp.orphex.co/support](https://mcp.orphex.co/support).
+### Claude apps
+
+In claude.ai or Claude Desktop, connect Orphex by following the Claude setup steps at
+[https://mcp.orphex.co/support](https://mcp.orphex.co/support).
 To upload the plugin to a Claude app, use the `orphex-vX.Y.Z.zip` attached to the
 [latest release](https://github.com/OrphexTech/orphex-agent-plugin/releases/latest).
 
-**Codex and ChatGPT.** OpenAI's plugin directory is shared by ChatGPT and Codex. Once Orphex
-is listed there, install it in Codex CLI by running `codex` and then `/plugins`, and in
-ChatGPT from the same directory. The OpenAI build of this plugin is on this repository's
-`openai` branch.
+### Cursor
 
-**Cursor.** [Add Orphex to Cursor](https://cursor.com/link/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=)
+[Add Orphex to Cursor](https://cursor.com/link/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=)
 opens Cursor and offers to install the Orphex connection; the first call opens your browser
 on the Orphex sign-in page. The same link as a Cursor deeplink is
 `cursor://anysphere.cursor-deeplink/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=`.
 This repository is also laid out as a Cursor plugin, with its manifest in
 `.cursor-plugin/plugin.json`, so Cursor reads the four skills from it as well.
 
-**Gemini CLI.** Install this repository as a Gemini CLI extension, restart Gemini CLI, and
-sign in from inside it:
+### Gemini CLI
+
+Install this repository as a Gemini CLI extension, restart Gemini CLI, and sign in from
+inside it:
 
 ```
 gemini extensions install https://github.com/OrphexTech/orphex-agent-plugin
@@ -60,7 +126,22 @@ The extension names Orphex's public sign-in client itself, so your `settings.jso
 edit. The browser opens on the Orphex sign-in page, and Gemini CLI receives the sign-in on a
 local port of your machine. The extension loads the four skills too.
 
+### Codex and ChatGPT
+
+OpenAI's plugin directory is shared by ChatGPT and Codex. Once Orphex is listed there,
+install it in Codex CLI by running `codex` and then `/plugins`, and in ChatGPT from the same
+directory. The OpenAI build of this plugin is on this repository's `openai` branch.
+
 ## What the plugin contains
+
+Orphex is an advertising-analytics platform. This plugin teaches Claude how to work
+with an Orphex connection: how to find the right capability before calling it, how to
+address a workspace, how to read the metric vocabulary before the numbers, and which
+prepared method answers a question about spend, ROAS, conversions, pacing or anomalies
+across the ad, analytics and commerce platforms a workspace has connected. It also
+carries the approval-first flow for making a change you ask for, such as a budget, a
+bid or a campaign's status: Claude shows you a preview, waits for your approval, and
+only then makes the change.
 
 - Four skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
@@ -84,23 +165,29 @@ These skills work through the Orphex connection. For portable marketing-analysis
 that work from exports you supply and use an Orphex connection when one is present, see
 [Orphex Agent Skills](https://github.com/OrphexTech/agent-skills).
 
-## What it connects to
+## Example prompts
 
-The plugin connects to exactly one endpoint, over HTTPS:
-`https://api.orphex.co/api/interaction-gateway/v1/mcp`.
+Replace the names below with your own campaigns and workspaces. Each one names the skill
+that handles it.
 
-Sign-in uses OAuth through Orphex's Auth0 tenant at `https://auth.orphex.co/`: your
-browser opens the Orphex sign-in page and you log in with your own Orphex account. The
-plugin carries no password, API key or client secret.
+- "Why did our ROAS on Meta drop last week compared with the week before?" — an
+  analysis, answered with the `orphex-analyst` method from read-only calls.
+- "Build the monthly performance report for September." — a report, built by
+  `orphex-reporting`, which starts from a prepared report template when the workspace
+  has one.
+- "Which of our TikTok campaigns are active right now, and what budget is each one
+  on?" — a live read from the platform itself, routed by `orphex-platform-reads` to
+  the TikTok guide.
+- "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
+  the platform's own change log with changes made through Orphex, routed by
+  `orphex-analyst`.
+- "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
+  me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
+  the before-and-after preview and applies it only after you approve.
 
-## What data is sent
+## Security
 
-The requests Claude makes on your behalf — which capability to run, the workspace, and
-arguments such as dates and metrics — go only to the Orphex endpoint above, and the
-results come back from it. Access is limited to the workspaces your Orphex account can
-already see. The plugin itself collects nothing, stores nothing and sends no telemetry.
-
-## How changes are made
+### How changes are made
 
 Answering questions and building reports use read-only calls. A change happens only when
 you ask for one, and the `orphex-actions` skill tells Claude to take the same steps every
@@ -122,7 +209,7 @@ A few changes run in a single call with no separate preview; for those the skill
 Claude to describe what the call will do and to make it only after you say yes. Undoing a
 change is a new proposal that goes through the same preview and approval.
 
-Changes go only through the Orphex endpoint above, and only where Orphex allows them:
+Changes go only through the Orphex endpoint below, and only where Orphex allows them:
 your Orphex plan has to include changes, the workspace has to have them switched on
 (they stay off until a workspace admin enables them), and your Orphex account needs an
 editor role in that workspace. Orphex's safety checks can refuse a change, for example a
@@ -130,26 +217,23 @@ budget step larger than one change may take, and some workspaces require a recor
 approval, sometimes from a second person, before a change can run. Where changes are not
 available, Claude tells you what the server says and changes nothing.
 
-## Example prompts
+### What it connects to
 
-Replace the names below with your own campaigns and workspaces.
+The plugin connects to exactly one endpoint, over HTTPS:
+`https://api.orphex.co/api/interaction-gateway/v1/mcp`.
 
-- "Why did our ROAS on Meta drop last week compared with the week before?" — an
-  analysis, answered with the `orphex-analyst` method from read-only calls.
-- "Build the monthly performance report for September." — a report, built by
-  `orphex-reporting`, which starts from a prepared report template when the workspace
-  has one.
-- "Which of our TikTok campaigns are active right now, and what budget is each one
-  on?" — a live read from the platform itself, routed by `orphex-platform-reads` to
-  the TikTok guide.
-- "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
-  the platform's own change log with changes made through Orphex, routed by
-  `orphex-analyst`.
-- "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
-  me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
-  the before-and-after preview and applies it only after you approve.
+Sign-in uses OAuth through Orphex's Auth0 tenant at `https://auth.orphex.co/`: your
+browser opens the Orphex sign-in page and you log in with your own Orphex account. The
+plugin carries no password, API key or client secret.
 
-## Privacy
+### What data is sent
+
+The requests Claude makes on your behalf — which capability to run, the workspace, and
+arguments such as dates and metrics — go only to the Orphex endpoint above, and the
+results come back from it. Access is limited to the workspaces your Orphex account can
+already see. The plugin itself collects nothing, stores nothing and sends no telemetry.
+
+### Privacy
 
 Orphex's privacy policy is at
 [https://orphex.co/en/privacy-policy](https://orphex.co/en/privacy-policy).
