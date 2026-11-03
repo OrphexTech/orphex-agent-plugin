@@ -134,6 +134,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `dengage_folder_coupon_write_v1` — dengage klasör oluştur; import coupon codes into a dengage coupon list
 - `dengage_transactional_send_v1` — dengage işlemsel e-posta gönder; send a dengage message with fallback
 - `emarsys_campaign_draft_write_v1` — Emarsys e-posta kampanyası oluştur; stop an emarsys campaign
+- `emarsys_contact_list_rename_v1` — Emarsys kişi listesinin adını değiştir; change an emarsys list name
 - `emarsys_product_catalog_write_v1` — Emarsys ürün kataloğuna ürün yükle; update emarsys product prices or availability
 - `emarsys_segment_create_v1` — Emarsys segmenti oluştur; build an emarsys segment from contact criteria
 - `emarsys_segment_criteria_update_v1` — Emarsys segment kriterlerini değiştir; update the rules of an emarsys segment

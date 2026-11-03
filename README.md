@@ -1,4 +1,49 @@
-# Orphex
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/OrphexTech/orphex-agent-plugin/main/.claude-plugin/icon.png" alt="Orphex logo" width="96">
+
+# Orphex MCP
+
+**Ask your AI assistant about your ad accounts — spend, ROAS and campaigns across Google Ads,
+Meta, TikTok and 20+ more platforms — and make changes only after you approve them.**
+
+Remote MCP server and plugin for Claude, ChatGPT, Cursor, Gemini CLI and other AI assistants.
+
+</div>
+
+## What you can do
+
+Ask in your own words; the plugin's skills pick the prepared method, report template or live
+read that fits the question.
+
+| Capability | Try asking |
+| --- | --- |
+| Performance analysis | "Why did our CPA on Google Ads go up last week compared with the week before?" |
+| Reports | "Build the monthly performance report for October, with an executive summary." |
+| Live platform reads | "Which of our Meta campaigns are active right now, and what budget is each one on?" |
+| Change history | "What changed in our Google Ads account this week, and who made each change?" |
+| Approval-first changes | "Pause the 'Black Friday Prospecting' campaign on Meta, and show me the preview before you apply it." |
+| Pacing and anomalies | "Are any campaigns pacing to overspend this month, or showing an unusual drop in conversions?" |
+
+**Platforms:** Google Ads, Meta, TikTok, LinkedIn, Pinterest, Snapchat, X Ads, Apple Ads,
+Google Analytics 4, Shopify, AppsFlyer, Adjust and more than a dozen other ad, analytics and
+commerce platforms. Which of them a workspace reaches depends on what it has connected in
+Orphex.
+
+## Manual MCP setup
+
+Orphex is a remote MCP server. In an MCP client that takes a server URL, add this one as a
+Streamable HTTP server and sign in with your Orphex account when the client asks:
+
+```text
+https://api.orphex.co/api/interaction-gateway/v1/mcp
+```
+
+Sign-in uses OAuth in your browser, never an API key. Orphex admits a known list of clients
+and does not accept dynamic client registration, so if your client cannot complete sign-in,
+write to [support@orphex.co](mailto:support@orphex.co).
+
+## What the plugin contains
 
 Orphex is an advertising-analytics platform. This plugin teaches Claude how to work
 with an Orphex connection: how to find the right capability before calling it, how to
@@ -8,8 +53,6 @@ across the ad, analytics and commerce platforms a workspace has connected. It al
 carries the approval-first flow for making a change you ask for, such as a budget, a
 bid or a campaign's status: Claude shows you a preview, waits for your approval, and
 only then makes the change.
-
-## What the plugin contains
 
 - Four skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
@@ -33,23 +76,29 @@ These skills work through the Orphex connection. For portable marketing-analysis
 that work from exports you supply and use an Orphex connection when one is present, see
 [Orphex Agent Skills](https://github.com/OrphexTech/agent-skills).
 
-## What it connects to
+## Example prompts
 
-The plugin connects to exactly one endpoint, over HTTPS:
-`https://api.orphex.co/api/interaction-gateway/v1/mcp`.
+Replace the names below with your own campaigns and workspaces. Each one names the skill
+that handles it.
 
-Sign-in uses OAuth through Orphex's Auth0 tenant at `https://auth.orphex.co/`: your
-browser opens the Orphex sign-in page and you log in with your own Orphex account. The
-plugin carries no password, API key or client secret.
+- "Why did our ROAS on Meta drop last week compared with the week before?" — an
+  analysis, answered with the `orphex-analyst` method from read-only calls.
+- "Build the monthly performance report for September." — a report, built by
+  `orphex-reporting`, which starts from a prepared report template when the workspace
+  has one.
+- "Which of our TikTok campaigns are active right now, and what budget is each one
+  on?" — a live read from the platform itself, routed by `orphex-platform-reads` to
+  the TikTok guide.
+- "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
+  the platform's own change log with changes made through Orphex, routed by
+  `orphex-analyst`.
+- "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
+  me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
+  the before-and-after preview and applies it only after you approve.
 
-## What data is sent
+## Security
 
-The requests Claude makes on your behalf — which capability to run, the workspace, and
-arguments such as dates and metrics — go only to the Orphex endpoint above, and the
-results come back from it. Access is limited to the workspaces your Orphex account can
-already see. The plugin itself collects nothing, stores nothing and sends no telemetry.
-
-## How changes are made
+### How changes are made
 
 Answering questions and building reports use read-only calls. A change happens only when
 you ask for one, and the `orphex-actions` skill tells Claude to take the same steps every
@@ -71,7 +120,7 @@ A few changes run in a single call with no separate preview; for those the skill
 Claude to describe what the call will do and to make it only after you say yes. Undoing a
 change is a new proposal that goes through the same preview and approval.
 
-Changes go only through the Orphex endpoint above, and only where Orphex allows them:
+Changes go only through the Orphex endpoint below, and only where Orphex allows them:
 your Orphex plan has to include changes, the workspace has to have them switched on
 (they stay off until a workspace admin enables them), and your Orphex account needs an
 editor role in that workspace. Orphex's safety checks can refuse a change, for example a
@@ -79,26 +128,23 @@ budget step larger than one change may take, and some workspaces require a recor
 approval, sometimes from a second person, before a change can run. Where changes are not
 available, Claude tells you what the server says and changes nothing.
 
-## Example prompts
+### What it connects to
 
-Replace the names below with your own campaigns and workspaces.
+The plugin connects to exactly one endpoint, over HTTPS:
+`https://api.orphex.co/api/interaction-gateway/v1/mcp`.
 
-- "Why did our ROAS on Meta drop last week compared with the week before?" — an
-  analysis, answered with the `orphex-analyst` method from read-only calls.
-- "Build the monthly performance report for September." — a report, built by
-  `orphex-reporting`, which starts from a prepared report template when the workspace
-  has one.
-- "Which of our TikTok campaigns are active right now, and what budget is each one
-  on?" — a live read from the platform itself, routed by `orphex-platform-reads` to
-  the TikTok guide.
-- "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
-  the platform's own change log with changes made through Orphex, routed by
-  `orphex-analyst`.
-- "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
-  me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
-  the before-and-after preview and applies it only after you approve.
+Sign-in uses OAuth through Orphex's Auth0 tenant at `https://auth.orphex.co/`: your
+browser opens the Orphex sign-in page and you log in with your own Orphex account. The
+plugin carries no password, API key or client secret.
 
-## Privacy
+### What data is sent
+
+The requests Claude makes on your behalf — which capability to run, the workspace, and
+arguments such as dates and metrics — go only to the Orphex endpoint above, and the
+results come back from it. Access is limited to the workspaces your Orphex account can
+already see. The plugin itself collects nothing, stores nothing and sends no telemetry.
+
+### Privacy
 
 Orphex's privacy policy is at
 [https://orphex.co/en/privacy-policy](https://orphex.co/en/privacy-policy).
