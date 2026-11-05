@@ -152,7 +152,7 @@ Orphex's privacy policy is at
 ## Requirements
 
 An Orphex account with at least one workspace. Accounts and platform connections are
-managed at [orphex.co](https://orphex.co).
+managed at [mcp.orphex.co](https://mcp.orphex.co/).
 
 ## Support
 
