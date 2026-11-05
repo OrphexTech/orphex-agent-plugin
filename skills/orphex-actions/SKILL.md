@@ -150,6 +150,8 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `google_analytics_property_settings_write_v1` — GA4 attribution ayarlarını değiştir; change GA4 reporting identity
 - `google_analytics_property_write_v1` — GA4 custom dimension oluştur; create a GA4 custom dimension
 - `google_analytics_skan_schema_write_v1` — configure GA4 iOS conversion values; remove an iOS conversion schema from a GA4 stream
+- `ikas_campaign_write_v1` — ikas kampanyası oluştur; generate ikas coupon codes
+- `ikas_catalog_write_v1` — ikas kategori ekle; set ikas stock
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results
 - `insider_catalog_write_v1` — Insider kataloğuna ürün yükle; add a locale to the insider catalog
 - `media_upload_v1` — video yükle; add a creative asset
