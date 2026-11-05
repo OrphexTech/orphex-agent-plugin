@@ -123,8 +123,9 @@ gemini extensions install https://github.com/OrphexTech/orphex-agent-plugin
 ```
 
 The extension names Orphex's public sign-in client itself, so your `settings.json` needs no
-edit. The browser opens on the Orphex sign-in page, and Gemini CLI receives the sign-in on a
-local port of your machine. The extension loads the four skills too.
+edit. The browser opens on the Orphex sign-in page, and Gemini CLI receives the sign-in on
+port 7777 of your machine, so that port has to be free while you sign in. The extension loads
+the four skills too.
 
 ### Codex and ChatGPT
 
@@ -241,7 +242,7 @@ Orphex's privacy policy is at
 ## Requirements
 
 An Orphex account with at least one workspace. Accounts and platform connections are
-managed at [orphex.co](https://orphex.co).
+managed at [mcp.orphex.co](https://mcp.orphex.co/).
 
 ## Support
 
