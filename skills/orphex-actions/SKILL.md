@@ -164,6 +164,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `emarsys_segment_criteria_update_v1` — Emarsys segment kriterlerini değiştir; update the rules of an emarsys segment
 - `emarsys_segment_delete_v1` — Emarsys segmentini sil; remove an emarsys segment
 - `entity_create_v1` — yeni kampanya aç; tiktok smart plus
+- `ga4_audience_activation_v1` — GA4 kitlemi Google Ads'e aktar; use a GA4 audience on TikTok
 - `google_analytics_360_hierarchy_write_v1` — create a GA4 rollup property; remove a GA4 rollup source link
 - `google_analytics_admin_access_write_v1` — who has access to this GA4 property; accept Google Analytics terms
 - `google_analytics_channel_groups_write_v1` — GA4 channel group oluştur; GA4 channel classification

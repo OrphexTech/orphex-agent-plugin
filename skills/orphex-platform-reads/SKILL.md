@@ -139,6 +139,8 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_yandex_v1` — yandex; yandex kampanya bütçesi
 - `tiktok_business_messaging_v1` — TikTok business messaging accounts; TikTok messaging webhook status
 - `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
+- `tiktok_lead_sheet_export_v1` — TikTok leads to Google Sheets; TikTok lead form export
+- `tiktok_organic_actions_v1` — TikTok organic comment reply; TikTok creator post advertising authorization
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 
