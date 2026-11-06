@@ -220,6 +220,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `subscription_entitlement_products_v1` — revenuecat yetkiye ürün bağla; revenuecat entitlement product access
 - `subscription_experiments_targeting_v1` — revenuecat deney sonuçları; revenuecat native chart metadata
 - `subscription_packages_v1` — revenuecat paket ürünleri; revenuecat package eligibility criteria
+- `subscription_paywall_authoring_v1` — revenuecat paywall sıfırdan oluştur; create revenuecat paywall
 - `subscription_paywall_publishing_v1` — revenuecat paywall yayınla; duplicate revenuecat paywall
 - `subscription_product_first_name_v1` — revenuecat ürüne ilk ad ver; revenuecat first name approval
 
