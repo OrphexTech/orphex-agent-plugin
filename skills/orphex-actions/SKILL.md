@@ -161,6 +161,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `meta_catalog_feed_write_v1` — Meta katalog oluştur; manage a meta catalog and its feeds
 - `meta_pixel_signals_sharing_write_v1` — Meta pikselini oluştur veya paylaş; read meta business signals and sharing requests
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
+- `quarterly_executive_deck_v1` — çeyreklik yönetici sunumu; quarterly performance slides
 - `routine_authoring_v1` — özel rutin yaz; archive a custom routine
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board
 - `search_console_sitemap_write_v1` — search console sitemap gönder; site haritasını search console'dan kaldır
