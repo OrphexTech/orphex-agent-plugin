@@ -137,6 +137,8 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
 - `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
 - `platform_reads_yandex_v1` — yandex; yandex kampanya bütçesi
+- `tiktok_business_messaging_v1` — TikTok business messaging accounts; TikTok messaging webhook status
+- `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 
