@@ -157,6 +157,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_freshness_and_windows_doctrine_v1` — veri ne kadar güncel; what does as_of mean
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
+- `platform_actions_pipedrive_crm_v1` — propose a Pipedrive deal change; Pipedrive kuruluş ilişkisini güncelle
 - `platform_actions_prewrite_asset_reads_v1` — sayfa akışı; which assets served together
 - `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
