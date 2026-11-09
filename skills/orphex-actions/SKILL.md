@@ -185,6 +185,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `meta_business_portfolio_assets_v1` — Meta Business portföyünü oku; read a Meta Business portfolio
 - `meta_catalog_feed_write_v1` — Meta katalog oluştur; manage a meta catalog and its feeds
 - `meta_pixel_signals_sharing_write_v1` — Meta pikselini oluştur veya paylaş; read meta business signals and sharing requests
+- `nebim_write_v1` — nebim müşteri ekle; create a nebim sales invoice
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
 - `quarterly_executive_deck_v1` — çeyreklik yönetici sunumu; quarterly performance slides
 - `routine_authoring_v1` — özel rutin yaz; archive a custom routine
