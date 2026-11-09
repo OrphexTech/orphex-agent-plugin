@@ -113,7 +113,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_reddit_structure_v1` — Reddit Ads hesaplarını listele; reddit ad group bid strategy
 - `platform_reads_reddit_v1` — Reddit Ads performans; reddit ads change history
 - `platform_reads_search_console_v1` — search console; which pages rank
-- `platform_reads_shopify_activity_v1` — Shopify satışları; Shopify metrikleri
+- `platform_reads_shopify_activity_v1` — Shopify satışları; Shopify son dakikalar
 - `platform_reads_shopify_v1` — shopify; list Shopify segments
 - `platform_reads_singular_activity_v1` — Singular install sayısı; singular data freshness
 - `platform_reads_singular_segments_v1` — Singular kırılımları; singular filter by app
@@ -132,7 +132,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_twitter_structure_v1` — X Ads hesaplarını listele; which currency is this x ads campaign in
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
 - `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
-- `platform_reads_yandex_v1` — yandex; yandex kampanya bütçesi
+- `platform_reads_yandex_v1` — yandex; yandex dönüşüm hedefleri
 - `tiktok_business_messaging_v1` — TikTok business messaging accounts; TikTok messaging webhook status
 - `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
 - `tiktok_lead_sheet_export_v1` — TikTok leads to Google Sheets; TikTok lead form export
