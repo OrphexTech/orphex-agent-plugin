@@ -138,7 +138,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
 - `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
 - `platform_reads_yandex_v1` — yandex; yandex dönüşüm hedefleri
-- `tiktok_business_messaging_v1` — TikTok business messaging accounts; TikTok messaging webhook status
+- `tiktok_business_messaging_v1` — TikTok işletme mesajı gönder; TikTok messaging webhook status
 - `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
 - `tiktok_lead_sheet_export_v1` — TikTok leads to Google Sheets; TikTok lead form export
 - `tiktok_organic_actions_v1` — TikTok organic comment reply; TikTok creator post advertising authorization
