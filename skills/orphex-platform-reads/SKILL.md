@@ -109,6 +109,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_meta_social_v1` — bağlı facebook sayfalarını listele; organic reach and views
 - `platform_reads_meta_v1` — meta; meta custom conversions
 - `platform_reads_mixpanel_v1` — mixpanel events; mixpanel kayıtlı rapor
+- `platform_reads_nebim_v1` — nebim; nebim procedure
 - `platform_reads_openai_ads_activity_v1` — OpenAI Ads performansı; openai ads attributed events
 - `platform_reads_openai_ads_v1` — OpenAI Ads hesabını listele; openai ads account currency
 - `platform_reads_pinterest_v1` — pinterest; pinterest haftalık performans
