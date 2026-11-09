@@ -224,6 +224,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `subscription_paywall_authoring_v1` — revenuecat paywall sıfırdan oluştur; create revenuecat paywall
 - `subscription_paywall_publishing_v1` — revenuecat paywall yayınla; duplicate revenuecat paywall
 - `subscription_product_first_name_v1` — revenuecat ürüne ilk ad ver; revenuecat first name approval
+- `tiktok_gmv_sessions_v1` — TikTok GMV Max oturumlarını listele; update a TikTok max delivery session budget
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 
