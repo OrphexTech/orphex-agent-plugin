@@ -55,7 +55,7 @@ the live entry you read in step 1.
 
 ### 1. Find the write, describe it, read its procedure
 
-> capability_search, first with no arguments for an overview, then narrowed.
+> capability_search, first with no arguments for an overview.
 
 The change has its own capability: each platform and each action has its own propose door,
 and a new entity has its own create door. Describe the one you found for the workspace the

@@ -30,7 +30,7 @@ and no data surface at all.
 
 ## 1. Find the capability, then call it
 
-> capability_search, first with no arguments for an overview, then narrowed.
+> capability_search, first with no arguments for an overview.
 
 Start with `capability_search` and no arguments: the answer is an overview of what this
 connection reaches, counted by family and by platform. Narrow from there with `family`,
