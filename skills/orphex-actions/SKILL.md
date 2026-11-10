@@ -122,6 +122,9 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `akinon_campaign_write_v1` — Akinon kampanyası oluştur; generate akinon voucher codes
 - `akinon_catalog_write_v1` — Akinon fiyat güncelle; set akinon stock
 - `alerts_config_write_v1` — alert kur; pause an alert
+- `braze_catalog_write_v1` — braze katalog oluştur; replace a braze catalog item
+- `braze_content_write_v1` — braze content block oluştur; update a braze translation
+- `braze_person_data_v1` — braze kullanıcı profilini oku; export the braze global control group
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
 - `dengage_audience_send_v1` — dengage push kampanyası gönder; trigger a dengage automated flow
@@ -163,6 +166,9 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `meta_pixel_signals_sharing_write_v1` — Meta pikselini oluştur veya paylaş; read meta business signals and sharing requests
 - `nebim_write_v1` — nebim müşteri ekle; create a nebim sales invoice
 - `negative_keyword_apply_v1` — negatif kelime ekle; remove a negative keyword
+- `netmera_app_objects_v1` — netmera segment oluştur; save a netmera notification definition
+- `netmera_person_data_v1` — netmera kullanıcı profili oku; mark a netmera inbox message read
+- `netmera_send_v1` — netmera push gönder; how many users will a netmera push reach
 - `quarterly_executive_deck_v1` — çeyreklik yönetici sunumu; quarterly performance slides
 - `routine_authoring_v1` — özel rutin yaz; archive a custom routine
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board

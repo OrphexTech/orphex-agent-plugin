@@ -143,12 +143,14 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `action_handshake_v1` — onay bekleyen değişiklik; approve a pending action
 - `ad_policy_status_v1` — reklam onaylandı mı; which headlines were disapproved
 - `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
+- `braze_reads_v1` — braze ile neler yapılabilir; braze official mcp server
 - `change_history_read_v1` — ne değişti; who paused my campaign
 - `creative_fatigue_diagnosis_v1` — kreatif yorgunluğu; creative fatigue
 - `ga4_ads_audience_health_v1` — GA4 kitleleri Google Ads'te 0 görünüyor; remarketing list is empty
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
 - `native_pacing_spend_review_v1` — native spend pacing review; native bütçe pacing incelemesi
+- `netmera_lanes_v1` — netmera ile neler yapılabilir; netmera campaign list
 - `new_account_orientation_v1` — hesabı tanı; what is connected in this workspace
 - `orphex_aggregation_doctrine_v1` — toplam roas nasıl hesaplanıyor; what does basis mean
 - `orphex_attribution_doctrine_v1` — conversions neyi sayıyor; why is the mmp install count different
@@ -158,6 +160,8 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
 - `platform_actions_pipedrive_crm_management_v1` — delete a Pipedrive deal; Pipedrive kaydını sil
+- `platform_actions_pipedrive_crm_schema_v1` — create a Pipedrive custom field; Pipedrive alan seçeneği ekle
+- `platform_actions_pipedrive_crm_structure_v1` — add a stage to a Pipedrive pipeline; Pipedrive lead etiketi oluştur
 - `platform_actions_pipedrive_crm_v1` — propose a Pipedrive deal change; Pipedrive kuruluş ilişkisini güncelle
 - `platform_actions_prewrite_asset_reads_v1` — sayfa akışı; which assets served together
 - `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
