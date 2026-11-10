@@ -159,7 +159,9 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_freshness_and_windows_doctrine_v1` — veri ne kadar güncel; what does as_of mean
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
+- `platform_actions_pipedrive_crm_admin_v1` — assign a user to a Pipedrive role; Pipedrive takımı oluştur
 - `platform_actions_pipedrive_crm_management_v1` — delete a Pipedrive deal; Pipedrive kaydını sil
+- `platform_actions_pipedrive_crm_relations_v1` — merge two Pipedrive deals; Pipedrive arama kaydı ekle
 - `platform_actions_pipedrive_crm_schema_v1` — create a Pipedrive custom field; Pipedrive alan seçeneği ekle
 - `platform_actions_pipedrive_crm_structure_v1` — add a stage to a Pipedrive pipeline; Pipedrive lead etiketi oluştur
 - `platform_actions_pipedrive_crm_v1` — propose a Pipedrive deal change; Pipedrive kuruluş ilişkisini güncelle
