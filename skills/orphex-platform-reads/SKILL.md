@@ -113,6 +113,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_openai_ads_activity_v1` — OpenAI Ads performansı; openai ads attributed events
 - `platform_reads_openai_ads_v1` — OpenAI Ads hesabını listele; openai ads account currency
 - `platform_reads_pinterest_v1` — pinterest; pinterest haftalık performans
+- `platform_reads_pipedrive_communication_v1` — Pipedrive e-postaları; Pipedrive deal files and emails
 - `platform_reads_pipedrive_crm_v1` — Pipedrive CRM oku; Pipedrive activity notes products
 - `platform_reads_pipedrive_relations_v1` — Pipedrive takipçileri ve katılımcılar; Pipedrive teams roles permission sets
 - `platform_reads_playstore_structure_v1` — Play Store uygulama listesi; play console crash groups
