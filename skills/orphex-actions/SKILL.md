@@ -148,7 +148,12 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `alerts_config_write_v1` — alert kur; pause an alert
 - `braze_catalog_write_v1` — braze katalog oluştur; replace a braze catalog item
 - `braze_content_write_v1` — braze content block oluştur; update a braze translation
+- `braze_data_objects_v1` — braze veri nesnesi tiplerini listele; link a user to a braze data object
+- `braze_delete_v1` — braze kullanıcısını sil; delete braze catalog items
 - `braze_person_data_v1` — braze kullanıcı profilini oku; export the braze global control group
+- `braze_person_write_v1` — braze kullanıcı özelliklerini güncelle; start a braze cdi sync
+- `braze_send_schedule_v1` — braze mesajını zamanla; schedule a braze canvas send
+- `braze_send_v1` — braze mesajı gönder; update a braze live activity
 - `budget_change_v1` — günlük bütçeyi güncelle; set a new daily budget
 - `creative_video_edit_v1` — videonun arka planını değiştir; edit the video in an ad
 - `dengage_audience_send_v1` — dengage push kampanyası gönder; trigger a dengage automated flow
