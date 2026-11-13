@@ -85,7 +85,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_dengage_v1` — dengage gönderimleri; dengage import job status
 - `platform_reads_emarsys_v1` — emarsys campaigns; emarsys segmentleri
 - `platform_reads_google_activity_v1` — Google performans oku; which keyword match type performed
-- `platform_reads_google_analytics_activity_v1` — analytics oturum verisi; is traffic coming in right now
+- `platform_reads_google_analytics_activity_v1` — analytics oturum verisi; GA4 attribution paths
 - `platform_reads_google_analytics_segments_v1` — GA4 hangi metrikleri destekliyor; list ga4 dimensions and metrics
 - `platform_reads_google_analytics_v1` — ga4; which app does this GA4 property measure
 - `platform_reads_google_assets_v1` — Google başlık hangi pozisyona pinli; which ads use this asset
