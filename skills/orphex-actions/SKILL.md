@@ -123,9 +123,10 @@ says when one cannot.
 
 ## Changes already waiting
 
-> If pending_actions is listed, call it at session start.
+> pending_actions lists the requests awaiting a decision.
 
-It lists the requests waiting on an approval or on a confirm, with what each would change.
+Call it when the person asks what is waiting, or before acting on a request they name. It
+lists the requests waiting on an approval or on a confirm, with what each would change.
 Put them to the person; approve, reject or cancel one only on their word.
 
 ## When a step is refused
