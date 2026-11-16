@@ -132,7 +132,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_tiktok_activity_v1` — TikTok performans oku; tiktok view-through conversions
 - `platform_reads_tiktok_segments_v1` — TikTok ülke kırılımı; tiktok hourly breakdown
 - `platform_reads_tiktok_v1` — tiktok; tiktok business center hierarchy
-- `platform_reads_trendyol_v1` — trendyol ürünlerim; trendyol barcodes
+- `platform_reads_trendyol_v1` — trendyol ürünlerim; trendyol müşteri soruları
 - `platform_reads_tsoft_v1` — t-soft storefront; t-soft iptal iade
 - `platform_reads_twitter_conversions_v1` — X Ads dönüşüm sayısı; x ads web event tags
 - `platform_reads_twitter_structure_v1` — X Ads hesaplarını listele; which currency is this x ads campaign in
