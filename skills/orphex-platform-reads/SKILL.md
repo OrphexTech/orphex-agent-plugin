@@ -79,6 +79,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_dengage_changes_v1` — dengage kişi bilgisi; dengage erasure request status
 - `platform_reads_dengage_v1` — dengage gönderimleri; dengage import job status
 - `platform_reads_emarsys_v1` — emarsys campaigns; emarsys segmentleri
+- `platform_reads_firebase_v1` — firebase projesi; firebase audiences
 - `platform_reads_google_activity_v1` — Google performans oku; which keyword match type performed
 - `platform_reads_google_analytics_activity_v1` — analytics oturum verisi; GA4 attribution paths
 - `platform_reads_google_analytics_segments_v1` — GA4 hangi metrikleri destekliyor; list ga4 dimensions and metrics
