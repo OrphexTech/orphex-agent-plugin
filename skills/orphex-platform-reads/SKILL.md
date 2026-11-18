@@ -98,6 +98,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_studies_v1` — Google deneyi anlamlı mı; did my ads lift awareness
 - `platform_reads_google_travel_v1` — Google otel sınıfına göre performans; hotel performance by city
 - `platform_reads_google_v1` — google ads; ad approval status google
+- `platform_reads_hepsiburada_v1` — hepsiburada ürünlerim; hepsiburada category attributes
 - `platform_reads_ideasoft_v1` — ideasoft siparişleri; ideasoft skus
 - `platform_reads_ikas_v1` — ikas; ikas siparişleri
 - `platform_reads_klaviyo_v1` — klaviyo campaigns; klaviyo kampanyaları
@@ -112,6 +113,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_meta_social_v1` — bağlı facebook sayfalarını listele; organic reach and views
 - `platform_reads_meta_v1` — meta; meta custom conversions
 - `platform_reads_mixpanel_v1` — mixpanel events; mixpanel kayıtlı rapor
+- `platform_reads_n11_v1` — n11 ürünlerim; n11 catalog id
 - `platform_reads_nebim_v1` — nebim; nebim procedure
 - `platform_reads_openai_ads_activity_v1` — OpenAI Ads performansı; openai ads attributed events
 - `platform_reads_openai_ads_v1` — OpenAI Ads hesabını listele; openai ads account currency
