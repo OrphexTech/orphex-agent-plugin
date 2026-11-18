@@ -140,6 +140,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_twitter_conversions_v1` — X Ads dönüşüm sayısı; x ads web event tags
 - `platform_reads_twitter_structure_v1` — X Ads hesaplarını listele; which currency is this x ads campaign in
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
+- `platform_reads_upspring_v1` — upspring; upspring marka analizi
 - `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
 - `platform_reads_yandex_v1` — yandex; yandex dönüşüm hedefleri
 - `tiktok_business_messaging_v1` — TikTok işletme mesajı gönder; TikTok messaging webhook status
