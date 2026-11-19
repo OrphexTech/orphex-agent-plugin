@@ -98,7 +98,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_studies_v1` — Google deneyi anlamlı mı; did my ads lift awareness
 - `platform_reads_google_travel_v1` — Google otel sınıfına göre performans; hotel performance by city
 - `platform_reads_google_v1` — google ads; ad approval status google
-- `platform_reads_hepsiburada_v1` — hepsiburada ürünlerim; hepsiburada category attributes
+- `platform_reads_hepsiburada_v1` — hepsiburada ürünlerim; hepsiburada orders
 - `platform_reads_ideasoft_v1` — ideasoft siparişleri; ideasoft skus
 - `platform_reads_ikas_v1` — ikas; ikas siparişleri
 - `platform_reads_klaviyo_v1` — klaviyo campaigns; klaviyo kampanyaları
