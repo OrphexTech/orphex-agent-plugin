@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "orphex",
-  "version": "1.0.81",
+  "version": "1.0.82",
   "description": "Method, routing and an approval-first change flow for the Orphex advertising-analytics MCP connection: how to find a capability, address a workspace, read the metric vocabulary before the numbers, which prepared method or report template answers an intent, and how to make a change the person asks for — preview, their explicit approval, then the change.",
   "author": {
     "name": "Orphex",
@@ -40,31 +40,31 @@
             {
               "description": "First contact: which workspaces the connection can see",
               "prompt": "I'm new to this Orphex connection. Which workspaces can I see through it?",
-              "tools_triggered": "get_workspaces",
+              "tools_triggered": "capability_search, capability_describe, run_read",
               "expected_behavior": "Lists the workspaces the connection is bound to by name, and asks which one to work in when there is more than one."
             },
             {
               "description": "Spend and ROAS from the ad platform's own report",
               "prompt": "How much did we spend on Google Ads last week, and what was our ROAS?",
-              "tools_triggered": "platform_management_performance_read",
+              "tools_triggered": "capability_search, capability_describe, run_read",
               "expected_behavior": "Reads last week's Google Ads performance and answers with the spend and the ROAS over the period, or the specific reason no Google Ads data came back."
             },
             {
               "description": "A change-history question answered from the platform's change log",
               "prompt": "Who changed what in our Meta ad account this week?",
-              "tools_triggered": "platform_management_changes_read",
+              "tools_triggered": "capability_search, capability_describe, run_read",
               "expected_behavior": "Reads this week's Meta change activity and says who changed what and when, or that no change is on record in the window."
             },
             {
               "description": "A budget change that stops at the preview until the person approves",
               "prompt": "Increase the daily budget of our Meta campaign 'Spring Launch' by 10%.",
-              "tools_triggered": "platform_actions_propose_meta_campaign_budget_update",
+              "tools_triggered": "capability_search, capability_describe, action_propose",
               "expected_behavior": "Shows a preview with the current and the proposed daily budget and asks for approval; nothing changes in Meta until the person says yes and the change is confirmed."
             },
             {
               "description": "A client report built from the workspace's report templates",
               "prompt": "Put together last week's performance report for the client.",
-              "tools_triggered": "skill_catalog",
+              "tools_triggered": "skill_catalog, skill_read, run_read",
               "expected_behavior": "Checks the report templates, and returns a report that states its period and workspace at the top and carries no placeholder figures."
             }
           ],
