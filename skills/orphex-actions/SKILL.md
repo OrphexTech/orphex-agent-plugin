@@ -210,6 +210,7 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `singular_fraud_rule_change_v1` — Singular fraud kuralı ekle; edit a singular fraud rule
 - `singular_publisher_blacklist_change_v1` — Singular publisher blacklist'e ekle; block a publisher's installs in singular
 - `singular_tracking_link_create_v1` — Singular tracking link oluştur; make a custom singular link
+- `specialist_authoring_v1` — özel uzman yaz; archive a custom specialist
 - `tag_manager_change_v1` — Tag Manager'da değişiklik yayınla; publish a Tag Manager container version
 - `tag_manager_platform_tag_install_v1` — GTM'e platform etiketi kur; install a pixel from the Tag Manager community template gallery
 - `tiktok_smart_plus_value_rule_set_v1` — TikTok value rule set oluştur; create a tiktok value rule set
