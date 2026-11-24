@@ -181,7 +181,7 @@ in it; `skill_catalog` is the only way to reach them.
 
 Each line is one `guide` entry: its id, then a sample of the Turkish and English phrases that indicate it.
 
-- `action_handshake_v1` — onay bekleyen değişiklik; approve a pending action
+- `action_handshake_v1` — onay bekleyen değişiklik; ask a reviewer
 - `ad_policy_status_v1` — reklam onaylandı mı; which headlines were disapproved
 - `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
 - `braze_reads_v1` — braze ile neler yapılabilir; braze official mcp server
