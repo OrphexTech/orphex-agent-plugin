@@ -74,12 +74,16 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_adjust_v1` — adjust; adjust partner forwarding
 - `platform_reads_akinon_v1` — akinon ürünlerim; connected akinon stores
 - `platform_reads_amazon_ads_v1` — amazon reklam performansı; amazon ads metrics
+- `platform_reads_amazon_seller_account_actions_v1` — amazon abonelik satışları; amazon seller subscriptions
+- `platform_reads_amazon_seller_external_fulfillment_v1` — amazon external fulfillment; amazon service jobs
 - `platform_reads_amazon_seller_v1` — amazon listelerim; amazon seller central
+- `platform_reads_amazon_seller_warehousing_v1` — amazon inbound plan oluştur; amazon warehousing and distribution
 - `platform_reads_app_store_v1` — App Store Connect uygulamalarını listele; read average App Store rating without review text
 - `platform_reads_apple_ads_activity_v1` — Apple Ads performans; Apple Ads async rapor
 - `platform_reads_apple_ads_v1` — apple ads; Apple Ads app screenshots and previews
 - `platform_reads_appsflyer_activity_v1` — appsflyer performans; revenue by acquisition date
 - `platform_reads_appsflyer_v1` — appsflyer; what changed in appsflyer
+- `platform_reads_bing_v1` — microsoft ads; microsoft ads reklam onay durumu
 - `platform_reads_criteo_structure_v1` — Criteo reklamveren listesi; criteo entity settings
 - `platform_reads_criteo_v1` — criteo performans; criteo report
 - `platform_reads_dengage_activity_v1` — dengage gönderim sayıları; dengage instant push report
