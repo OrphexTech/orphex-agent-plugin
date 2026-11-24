@@ -73,6 +73,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_adjust_segments_v1` — Adjust haftalık kırılım; installs by source app
 - `platform_reads_adjust_v1` — adjust; adjust partner forwarding
 - `platform_reads_akinon_v1` — akinon ürünlerim; connected akinon stores
+- `platform_reads_amazon_ads_v1` — amazon reklam performansı; amazon ads metrics
 - `platform_reads_amazon_seller_v1` — amazon listelerim; amazon seller central
 - `platform_reads_app_store_v1` — App Store Connect uygulamalarını listele; read average App Store rating without review text
 - `platform_reads_apple_ads_activity_v1` — Apple Ads performans; Apple Ads async rapor
