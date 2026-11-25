@@ -77,6 +77,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_amazon_seller_account_actions_v1` — amazon abonelik satışları; amazon seller subscriptions
 - `platform_reads_amazon_seller_external_fulfillment_v1` — amazon external fulfillment; amazon service jobs
 - `platform_reads_amazon_seller_v1` — amazon listelerim; amazon seller central
+- `platform_reads_amazon_seller_wallet_invoices_v1` — amazon cüzdan bakiyem; delivery by amazon invoice status
 - `platform_reads_amazon_seller_warehousing_v1` — amazon inbound plan oluştur; amazon warehousing and distribution
 - `platform_reads_app_store_v1` — App Store Connect uygulamalarını listele; read average App Store rating without review text
 - `platform_reads_apple_ads_activity_v1` — Apple Ads performans; Apple Ads async rapor
