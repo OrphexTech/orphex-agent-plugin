@@ -177,16 +177,16 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `firebase_push_send_v1` — firebase push bildirimi gönder; firebase cloud messaging send
 - `firebase_remote_config_change_v1` — firebase remote config parametresi ekle; roll back firebase remote config
 - `ga4_audience_activation_v1` — GA4 kitlemi Google Ads'e aktar; use a GA4 audience on TikTok
-- `google_analytics_360_hierarchy_write_v1` — create a GA4 rollup property; remove a GA4 rollup source link
-- `google_analytics_admin_access_write_v1` — who has access to this GA4 property; accept Google Analytics terms
+- `google_analytics_360_hierarchy_write_v1` — GA4 rollup property oluştur; remove a GA4 rollup source link
+- `google_analytics_admin_access_write_v1` — bu GA4 property'sine kimler erişebiliyor; accept Google Analytics terms
 - `google_analytics_channel_groups_write_v1` — GA4 channel group oluştur; GA4 channel classification
-- `google_analytics_dv360_write_v1` — link a GA4 property to a DV360 advertiser; unlink a DV360 advertiser from GA4
+- `google_analytics_dv360_write_v1` — GA4 property'sini bir DV360 reklamvereniyle bağla; unlink a DV360 advertiser from GA4
 - `google_analytics_event_rules_write_v1` — GA4 event create rule ekle; delete a GA4 event rule
 - `google_analytics_product_links_write_v1` — link GA4 to Firebase; Search Ads 360 bağlantısını güncelle
-- `google_analytics_property_lifecycle_write_v1` — update GA4 account name; prepare a Google Analytics account provisioning ticket
+- `google_analytics_property_lifecycle_write_v1` — GA4 hesap adını güncelle; prepare a Google Analytics account provisioning ticket
 - `google_analytics_property_settings_write_v1` — GA4 attribution ayarlarını değiştir; change GA4 reporting identity
 - `google_analytics_property_write_v1` — GA4 custom dimension oluştur; create a GA4 custom dimension
-- `google_analytics_skan_schema_write_v1` — configure GA4 iOS conversion values; remove an iOS conversion schema from a GA4 stream
+- `google_analytics_skan_schema_write_v1` — GA4 iOS dönüşüm değerlerini yapılandır; remove an iOS conversion schema from a GA4 stream
 - `ikas_campaign_write_v1` — ikas kampanyası oluştur; generate ikas coupon codes
 - `ikas_catalog_write_v1` — ikas kategori ekle; set ikas stock
 - `impact_analysis_run_v1` — impact analizi çalıştır; is this campaign really lifting results

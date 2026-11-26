@@ -120,7 +120,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_meta_v1` — meta; meta custom conversions
 - `platform_reads_mixpanel_v1` — mixpanel events; mixpanel kayıtlı rapor
 - `platform_reads_n11_v1` — n11 ürünlerim; n11 catalog id
-- `platform_reads_nebim_v1` — nebim; nebim procedure
+- `platform_reads_nebim_v1` — nebim sorgusu çalıştır; nebim procedure
 - `platform_reads_openai_ads_activity_v1` — OpenAI Ads performansı; openai ads attributed events
 - `platform_reads_openai_ads_v1` — OpenAI Ads hesabını listele; openai ads account currency
 - `platform_reads_pinterest_v1` — pinterest; pinterest haftalık performans
@@ -152,12 +152,12 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_twitter_structure_v1` — X Ads hesaplarını listele; which currency is this x ads campaign in
 - `platform_reads_twitter_v1` — X Ads performans; x ads clicks and cpc
 - `platform_reads_upspring_v1` — upspring; upspring marka analizi
-- `platform_reads_yandex_activity_v1` — yandex performance; yandex harcama
+- `platform_reads_yandex_activity_v1` — yandex kampanya performansı; yandex keyword performance
 - `platform_reads_yandex_v1` — yandex; yandex dönüşüm hedefleri
 - `tiktok_business_messaging_v1` — TikTok işletme mesajı gönder; TikTok messaging webhook status
 - `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
-- `tiktok_lead_sheet_export_v1` — TikTok leads to Google Sheets; TikTok lead form export
-- `tiktok_organic_actions_v1` — TikTok organic comment reply; TikTok creator post advertising authorization
+- `tiktok_lead_sheet_export_v1` — tiktok lead formunu google sheets'e aktar; TikTok lead form export
+- `tiktok_organic_actions_v1` — tiktok yorumuna yanıt ver; TikTok creator post advertising authorization
 
 `skill_catalog` — not this list — is the authority on what exists here, and it returns each entry's summary and the capabilities its flow uses. Always `skill_read` the live entry before executing its flow.
 
