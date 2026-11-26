@@ -201,6 +201,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_freshness_and_windows_doctrine_v1` — veri ne kadar güncel; what does as_of mean
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
+- `platform_actions_criteo_writes_v1` — Criteo değişikliği öner; propose a criteo change
 - `platform_actions_pipedrive_crm_admin_v1` — assign a user to a Pipedrive role; Pipedrive takımı oluştur
 - `platform_actions_pipedrive_crm_management_v1` — delete a Pipedrive deal; Pipedrive kaydını sil
 - `platform_actions_pipedrive_crm_relations_v1` — merge two Pipedrive deals; upload a file to a Pipedrive deal
@@ -210,6 +211,9 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_actions_prewrite_asset_reads_v1` — sayfa akışı; which assets served together
 - `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
 - `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
+- `platform_actions_revenuecat_catalog_writes_v1` — RevenueCat yetki adını değiştir; create a revenuecat entitlement
+- `platform_actions_tiktok_catalog_video_v1` — TikTok katalog videosu içe aktar; delete a tiktok catalog video
+- `platform_actions_tiktok_writes_v1` — TikTok değişikliği öner; propose a tiktok change
 - `read_guidance_v1` — bir sonraki adımı öner; next step after this report
 - `roas_drop_diagnosis_v1` — ROAS düştü; how do I diagnose a ROAS drop
 - `routine_budget_ceiling_check_v1` — bütçe sınırı rutini; google account budget running out check

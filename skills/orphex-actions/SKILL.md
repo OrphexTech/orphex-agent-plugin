@@ -206,7 +206,9 @@ Each line is one `skill` entry: its id, then a sample of the Turkish and English
 - `routine_authoring_v1` — özel rutin yaz; archive a custom routine
 - `scorecard_authoring_v1` — scorecard oluştur; build a KPI tracking board
 - `search_console_sitemap_write_v1` — search console sitemap gönder; site haritasını search console'dan kaldır
-- `sheets_export_v1` — sheets'e aktar; write this table to a google sheet
+- `sheets_export_catalog_v1` — ürün kataloğunu sheet'e aktar; export the whole product feed to a sheet
+- `sheets_export_data_v1` — bu tabloyu sheet'e yaz; write this table to a google sheet
+- `sheets_export_v1` — sheets'e aktar; send this data to a google sheet
 - `shopify_storefront_tags_v1` — Shopify mağazama GTM kur; set the Shopify storefront tags
 - `singular_fraud_rule_change_v1` — Singular fraud kuralı ekle; edit a singular fraud rule
 - `singular_publisher_blacklist_change_v1` — Singular publisher blacklist'e ekle; block a publisher's installs in singular

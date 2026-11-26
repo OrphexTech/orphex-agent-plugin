@@ -155,7 +155,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_yandex_activity_v1` — yandex kampanya performansı; yandex keyword performance
 - `platform_reads_yandex_v1` — yandex; yandex dönüşüm hedefleri
 - `tiktok_business_messaging_v1` — TikTok işletme mesajı gönder; TikTok messaging webhook status
-- `tiktok_catalog_video_v1` — TikTok catalog videos; TikTok catalog trending products
+- `tiktok_catalog_video_v1` — TikTok katalog videoları; TikTok catalog trending products
 - `tiktok_lead_sheet_export_v1` — tiktok lead formunu google sheets'e aktar; TikTok lead form export
 - `tiktok_organic_actions_v1` — tiktok yorumuna yanıt ver; TikTok creator post advertising authorization
 
