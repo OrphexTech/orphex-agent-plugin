@@ -210,6 +210,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `routine_peak_sale_tracking_readiness_v1` — black friday ölçüm hazırlık rutini; peak sale measurement readiness check
 - `routine_scorecard_off_track_check_v1` — scorecard hedef rutini; check my kpi targets every week
 - `routines_runner_v1` — rutinlerimi çalıştır; what routines are due now
+- `setup_advisor_v1` — hangi rutinleri kurmalıyım; setup advisor for routines and agents
 - `subscription_catalog_state_v1` — revenuecat ürün arşivle; revenuecat catalog state
 - `subscription_customers_audiences_v1` — revenuecat müşteri ayrıntısı; revenuecat audience preview
 - `subscription_economics_v1` — abonelik geliri; subscription retention
