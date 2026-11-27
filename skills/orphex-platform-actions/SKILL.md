@@ -55,6 +55,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 
 - `action_handshake_v1` — onay bekleyen değişiklik; ask a reviewer
 - `braze_reads_v1` — braze ile neler yapılabilir; braze official mcp server
+- `challenger_agent_v1` — itirazcı ajan yaz; leave a note on a proposal waiting for approval
 - `netmera_lanes_v1` — netmera ile neler yapılabilir; netmera campaign list
 - `platform_actions_amazon_seller_account_actions_writes_v1` — amazon tedarik noktası oluştur; create an amazon action plan
 - `platform_actions_amazon_seller_external_fulfillment_writes_v1` — amazon depo stok güncelle; reschedule an amazon service appointment
