@@ -104,7 +104,7 @@ opens Cursor and offers to install the Orphex connection; the first call opens y
 on the Orphex sign-in page. The same link as a Cursor deeplink is
 `cursor://anysphere.cursor-deeplink/mcp/install?name=orphex&config=eyJ1cmwiOiJodHRwczovL2FwaS5vcnBoZXguY28vYXBpL2ludGVyYWN0aW9uLWdhdGV3YXkvdjEvbWNwIn0=`.
 This repository is also laid out as a Cursor plugin, with its manifest in
-`.cursor-plugin/plugin.json`, so Cursor reads the four skills from it as well.
+`.cursor-plugin/plugin.json`, so Cursor reads the five skills from it as well.
 
 ### Gemini CLI
 
@@ -119,7 +119,7 @@ gemini extensions install https://github.com/OrphexTech/orphex-agent-plugin
 The extension names Orphex's public sign-in client itself, so your `settings.json` needs no
 edit. The browser opens on the Orphex sign-in page, and Gemini CLI receives the sign-in on
 port 7777 of your machine, so that port has to be free while you sign in. The extension loads
-the four skills too.
+the five skills too.
 
 ### Codex and ChatGPT
 
@@ -138,7 +138,7 @@ carries the approval-first flow for making a change you ask for, such as a budge
 bid or a campaign's status: Claude shows you a preview, waits for your approval, and
 only then makes the change.
 
-- Four skills, written as plain Markdown instructions:
+- Five skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
     campaign, changing a budget or a bid, creating a campaign, ad set or ad, adding
     negative keywords, uploading media, changing Tag Manager, GA4, Singular or Insider
@@ -146,6 +146,9 @@ only then makes the change.
     described below.
   - `orphex-analyst` — answers questions about what the numbers are, why they moved
     and what to do about it, and routes each one to the prepared method that fits.
+  - `orphex-platform-actions` — routes a change you ask for on one named platform, such
+    as a Trendyol price or an Amazon inbound plan, to the guide for that platform's own
+    changes, which `orphex-actions` then makes through the same approval-first flow.
   - `orphex-platform-reads` — routes a question that names one advertising platform to
     the guide for that platform's own live reads.
   - `orphex-reporting` — builds a report, such as a weekly or monthly performance
@@ -176,6 +179,9 @@ that handles it.
 - "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
   the platform's own change log with changes made through Orphex, routed by
   `orphex-analyst`.
+- "Set the price of SKU 'TS-042' in our Trendyol store to 249.90, and show me the change
+  first." — a change on one named platform, routed by `orphex-platform-actions` to the
+  Trendyol change guide and made by `orphex-actions` after you approve the preview.
 - "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
   me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
   the before-and-after preview and applies it only after you approve.

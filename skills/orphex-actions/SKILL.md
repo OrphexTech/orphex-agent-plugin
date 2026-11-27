@@ -67,7 +67,8 @@ person means, and read `write_protocol` off that answer before anything else.
 
 The routing map below lists the change procedures. `skill_read` the one that fits before
 proposing; `safe_actions_usage_v1` and `action_handshake_v1` are the guides for the steps
-every write shares. The id of the thing to change comes from a read made on this connection
+every write shares, and a change on one named platform has its own guide, routed by
+`orphex-platform-actions`. The id of the thing to change comes from a read made on this connection
 or from the person, never from a guess.
 
 ### 2. Propose — `write_protocol` decides what that does

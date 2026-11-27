@@ -73,12 +73,13 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_adjust_segments_v1` — Adjust haftalık kırılım; installs by source app
 - `platform_reads_adjust_v1` — adjust; adjust partner forwarding
 - `platform_reads_akinon_v1` — akinon ürünlerim; connected akinon stores
+- `platform_reads_amazon_ads_dsp_v1` — amazon dsp hedefleme; amazon dsp campaign insights
 - `platform_reads_amazon_ads_v1` — amazon reklam performansı; amazon ads metrics
 - `platform_reads_amazon_seller_account_actions_v1` — amazon abonelik satışları; amazon seller subscriptions
 - `platform_reads_amazon_seller_external_fulfillment_v1` — amazon external fulfillment; amazon service jobs
 - `platform_reads_amazon_seller_v1` — amazon listelerim; amazon seller central
 - `platform_reads_amazon_seller_wallet_invoices_v1` — amazon cüzdan bakiyem; delivery by amazon invoice status
-- `platform_reads_amazon_seller_warehousing_v1` — amazon inbound plan oluştur; amazon warehousing and distribution
+- `platform_reads_amazon_seller_warehousing_v1` — amazon awd stok; amazon warehousing and distribution
 - `platform_reads_app_store_v1` — App Store Connect uygulamalarını listele; read average App Store rating without review text
 - `platform_reads_apple_ads_activity_v1` — Apple Ads performans; Apple Ads async rapor
 - `platform_reads_apple_ads_v1` — apple ads; Apple Ads app screenshots and previews
@@ -104,6 +105,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_google_studies_v1` — Google deneyi anlamlı mı; did my ads lift awareness
 - `platform_reads_google_travel_v1` — Google otel sınıfına göre performans; hotel performance by city
 - `platform_reads_google_v1` — google ads; ad approval status google
+- `platform_reads_hardal_v1` — hardal ziyaretçileri; hardal leads
 - `platform_reads_hepsiburada_v1` — hepsiburada ürünlerim; hepsiburada orders
 - `platform_reads_ideasoft_v1` — ideasoft siparişleri; ideasoft skus
 - `platform_reads_ikas_v1` — ikas; ikas siparişleri
@@ -131,6 +133,7 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `platform_reads_playstore_v1` — google play okuması; play store data freshness
 - `platform_reads_reddit_structure_v1` — Reddit Ads hesaplarını listele; reddit ad group bid strategy
 - `platform_reads_reddit_v1` — Reddit Ads performans; reddit ads change history
+- `platform_reads_rtb_house_v1` — rtb house performansı; rtb house count convention
 - `platform_reads_search_console_v1` — search console; which pages rank
 - `platform_reads_shopify_activity_v1` — Shopify satışları; Shopify son dakikalar
 - `platform_reads_shopify_v1` — shopify; list Shopify segments
