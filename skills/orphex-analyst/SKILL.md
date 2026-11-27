@@ -181,10 +181,8 @@ in it; `skill_catalog` is the only way to reach them.
 
 Each line is one `guide` entry: its id, then a sample of the Turkish and English phrases that indicate it.
 
-- `action_handshake_v1` — onay bekleyen değişiklik; ask a reviewer
 - `ad_policy_status_v1` — reklam onaylandı mı; which headlines were disapproved
 - `brand_memory_usage_v1` — marka hafızası; which notes apply to this change
-- `braze_reads_v1` — braze ile neler yapılabilir; braze official mcp server
 - `change_history_read_v1` — ne değişti; who paused my campaign
 - `creative_fatigue_diagnosis_v1` — kreatif yorgunluğu; creative fatigue
 - `ga4_ads_audience_health_v1` — GA4 kitleleri Google Ads'te 0 görünüyor; remarketing list is empty
@@ -192,7 +190,6 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `monthly_native_performance_summary_v1` — native monthly performance summary; aylık native performans özeti
 - `native_account_measurement_review_v1` — native account measurement review; native hesap ölçüm incelemesi
 - `native_pacing_spend_review_v1` — native spend pacing review; native bütçe pacing incelemesi
-- `netmera_lanes_v1` — netmera ile neler yapılabilir; netmera campaign list
 - `new_account_orientation_v1` — hesabı tanı; what is connected in this workspace
 - `orphex_aggregation_doctrine_v1` — toplam roas nasıl hesaplanıyor; what does basis mean
 - `orphex_attribution_doctrine_v1` — conversions neyi sayıyor; why is the mmp install count different
@@ -201,19 +198,6 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `orphex_freshness_and_windows_doctrine_v1` — veri ne kadar güncel; what does as_of mean
 - `orphex_source_routing_v1` — orphex'te veri yok; which source answers this
 - `plan_read_v1` — planım ne; upgrade my plan
-- `platform_actions_criteo_writes_v1` — Criteo değişikliği öner; propose a criteo change
-- `platform_actions_pipedrive_crm_admin_v1` — assign a user to a Pipedrive role; Pipedrive takımı oluştur
-- `platform_actions_pipedrive_crm_management_v1` — delete a Pipedrive deal; Pipedrive kaydını sil
-- `platform_actions_pipedrive_crm_relations_v1` — merge two Pipedrive deals; upload a file to a Pipedrive deal
-- `platform_actions_pipedrive_crm_schema_v1` — create a Pipedrive custom field; Pipedrive alan seçeneği ekle
-- `platform_actions_pipedrive_crm_structure_v1` — add a stage to a Pipedrive pipeline; Pipedrive lead etiketi oluştur
-- `platform_actions_pipedrive_crm_v1` — propose a Pipedrive deal change; Pipedrive kuruluş ilişkisini güncelle
-- `platform_actions_prewrite_asset_reads_v1` — sayfa akışı; which assets served together
-- `platform_actions_prewrite_reads_v1` — anahtar kelime fikirleri; pinterest targeting options
-- `platform_actions_prewrite_structure_reads_v1` — ürün grubu; which product group is spending
-- `platform_actions_revenuecat_catalog_writes_v1` — RevenueCat yetki adını değiştir; create a revenuecat entitlement
-- `platform_actions_tiktok_catalog_video_v1` — TikTok katalog videosu içe aktar; delete a tiktok catalog video
-- `platform_actions_tiktok_writes_v1` — TikTok değişikliği öner; propose a tiktok change
 - `read_guidance_v1` — bir sonraki adımı öner; next step after this report
 - `roas_drop_diagnosis_v1` — ROAS düştü; how do I diagnose a ROAS drop
 - `routine_budget_ceiling_check_v1` — bütçe sınırı rutini; google account budget running out check
@@ -226,7 +210,6 @@ Each line is one `guide` entry: its id, then a sample of the Turkish and English
 - `routine_peak_sale_tracking_readiness_v1` — black friday ölçüm hazırlık rutini; peak sale measurement readiness check
 - `routine_scorecard_off_track_check_v1` — scorecard hedef rutini; check my kpi targets every week
 - `routines_runner_v1` — rutinlerimi çalıştır; what routines are due now
-- `safe_actions_usage_v1` — güvenli değişiklik; apply a platform action
 - `subscription_catalog_state_v1` — revenuecat ürün arşivle; revenuecat catalog state
 - `subscription_customers_audiences_v1` — revenuecat müşteri ayrıntısı; revenuecat audience preview
 - `subscription_economics_v1` — abonelik geliri; subscription retention

@@ -54,7 +54,7 @@ carries the approval-first flow for making a change you ask for, such as a budge
 bid or a campaign's status: Claude shows you a preview, waits for your approval, and
 only then makes the change.
 
-- Four skills, written as plain Markdown instructions:
+- Five skills, written as plain Markdown instructions:
   - `orphex-actions` — makes a change you ask for, such as pausing or enabling a
     campaign, changing a budget or a bid, creating a campaign, ad set or ad, adding
     negative keywords, uploading media, changing Tag Manager, GA4, Singular or Insider
@@ -62,6 +62,9 @@ only then makes the change.
     described below.
   - `orphex-analyst` — answers questions about what the numbers are, why they moved
     and what to do about it, and routes each one to the prepared method that fits.
+  - `orphex-platform-actions` — routes a change you ask for on one named platform, such
+    as a Trendyol price or an Amazon inbound plan, to the guide for that platform's own
+    changes, which `orphex-actions` then makes through the same approval-first flow.
   - `orphex-platform-reads` — routes a question that names one advertising platform to
     the guide for that platform's own live reads.
   - `orphex-reporting` — builds a report, such as a weekly or monthly performance
@@ -92,6 +95,9 @@ that handles it.
 - "Who paused my Google Ads campaigns this week?" — a read of what changed, combining
   the platform's own change log with changes made through Orphex, routed by
   `orphex-analyst`.
+- "Set the price of SKU 'TS-042' in our Trendyol store to 249.90, and show me the change
+  first." — a change on one named platform, routed by `orphex-platform-actions` to the
+  Trendyol change guide and made by `orphex-actions` after you approve the preview.
 - "Raise the daily budget of the 'Summer Sale' Meta campaign from 100 to 120, and show
   me the change before you apply it." — a change, made by `orphex-actions`: Claude shows
   the before-and-after preview and applies it only after you approve.
